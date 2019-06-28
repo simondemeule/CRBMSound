@@ -1,3 +1,4 @@
+import os
 import math
 import numpy as np
 import scipy as sp
@@ -9,18 +10,22 @@ import xrbm.models
 import xrbm.train
 import xrbm.losses
 
-MODEL_HAAR_ENABLE = False # unimplemented
-MODEL_ORDER = 1000
-MODEL_NUM_HID = 200
-MODEL_LEARN_RATE = 0.01
-MODEL_BATCH_SIZE = 2000
-MODEL_EPOCHS = 100
-MODEL_GIBBS_TRAIN = 1
-MODEL_GIBBS_GENERATE = 2
-MODEL_CLIP_ENABLE = False # unimplemented
-MODEL_CLIP_WINDOW = 0.6
+class model:
+    pass
 
-rate, data = sp.io.wavfile.read("input.wav")
+model.batch_size = 2000
+model.clip_enable = False # unimplemented
+model.clip_window = 0.6
+model.epochs = 100
+model.gibbs_generate = 2
+model.gibbs_train = 1
+model.haar_enable = False # unimplemented
+model.input_file = "inputmetal.wav"
+model.learn_rate = 0.01
+model.num_hid = 200
+model.order = 100
+
+rate, data = sp.io.wavfile.read(model.input_file)
 
 """
 def range_data_to_normalized(activations):
@@ -66,11 +71,11 @@ data_normalized = [(d - data_mean) / data_std for d in data]
 condition_data = []
 visible_data = []
 
-if MODEL_HAAR_ENABLE:
+if model.haar_enable:
     print("unimplemented")
 else:
-    for i in range(MODEL_ORDER, len(data_normalized) - 1):
-        condition_data.append(data_normalized[i - MODEL_ORDER: i])
+    for i in range(model.order, len(data_normalized) - 1):
+        condition_data.append(data_normalized[i - model.order: i])
         visible_data.append([data_normalized[i]])
 
 condition_data = np.asarray(condition_data)
@@ -85,14 +90,14 @@ tf.reset_default_graph()
 # create CRBM
 crbm = xrbm.models.CRBM(num_vis = MODEL_NUM_VIS,
                         num_cond = MODEL_NUM_COND,
-                        num_hid = MODEL_NUM_HID,
+                        num_hid = model.num_hid,
                         vis_type = 'gaussian',
                         initializer = tf.contrib.layers.xavier_initializer(),
                         name='crbm')
 
 # create mini-batches
 batch_indexes = np.random.permutation(range(len(visible_data)))
-batch_number  = len(batch_indexes) // MODEL_BATCH_SIZE
+batch_number  = len(batch_indexes) // model.batch_size
 
 # create placeholder
 batch_visible_data     = tf.placeholder(tf.float32, shape = (None, MODEL_NUM_VIS), name = 'vis_data')
@@ -100,9 +105,9 @@ batch_condition_data   = tf.placeholder(tf.float32, shape = (None, MODEL_NUM_CON
 momentum               = tf.placeholder(tf.float32, shape = ())
 
 # define training operator
-cdapproximator     = xrbm.train.CDApproximator(learning_rate = MODEL_LEARN_RATE,
+cdapproximator     = xrbm.train.CDApproximator(learning_rate = model.learn_rate,
                                                momentum = momentum,
-                                               k = MODEL_GIBBS_TRAIN)
+                                               k = model.gibbs_train)
 
 train_op           = cdapproximator.train(crbm, vis_data = batch_visible_data, in_data = [batch_condition_data])
 
@@ -113,7 +118,7 @@ xentropy_rec_cost  = xrbm.losses.cross_entropy(batch_visible_data, reconstructed
 sess = tf.Session()
 sess.run(tf.global_variables_initializer())
 
-for epoch in range(MODEL_EPOCHS):
+for epoch in range(model.epochs):
 
     if epoch < 5: # for the first 5 epochs, we use a momentum coeficient of 0
         epoch_momentum = 0
@@ -122,7 +127,7 @@ for epoch in range(MODEL_EPOCHS):
 
     for batch_i in range(batch_number):
         # Get just minibatch amount of data
-        indexes_i = batch_indexes[batch_i * MODEL_BATCH_SIZE:(batch_i + 1) * MODEL_BATCH_SIZE]
+        indexes_i = batch_indexes[batch_i * model.batch_size:(batch_i + 1) * model.batch_size]
 
         feed = {batch_visible_data: visible_data[indexes_i],
                 batch_condition_data: condition_data[indexes_i],
@@ -136,10 +141,10 @@ for epoch in range(MODEL_EPOCHS):
 
 
     print('Epoch %i / %i | Reconstruction Cost = %f' %
-          (epoch + 1, MODEL_EPOCHS, reconstruction_cost))
+          (epoch + 1, model.epochs, reconstruction_cost))
 
 # define generator
-def generate(crbm, gen_init_frame = 0, num_gen = MODEL_ORDER):
+def generate(crbm, gen_init_frame = 0, num_gen = model.order):
     print('Generating %d frames: ' % (num_gen))
 
     gen_sample = []
@@ -148,18 +153,18 @@ def generate(crbm, gen_init_frame = 0, num_gen = MODEL_ORDER):
 
     gen_cond = tf.placeholder(tf.float32, shape = [1, MODEL_NUM_COND], name = 'gen_cond_data')
     gen_init = tf.placeholder(tf.float32, shape = [1, MODEL_NUM_VIS], name = 'gen_init_data')
-    gen_op = crbm.predict(gen_cond, gen_init, MODEL_GIBBS_GENERATE)
+    gen_op = crbm.predict(gen_cond, gen_init, model.gibbs_generate)
 
-    if MODEL_HAAR_ENABLE:
+    if model.haar_enable:
         print("unimplemented")
     else:
-        for f in range(MODEL_ORDER):
+        for f in range(model.order):
             gen_sample.append(np.reshape(visible_data[gen_init_frame + f], [1, MODEL_NUM_VIS]))
 
         for f in range(num_gen):
-            initcond = np.asarray([gen_sample[s] for s in range(f, f + MODEL_ORDER)]).ravel()
+            initcond = np.asarray([gen_sample[s] for s in range(f, f + model.order)]).ravel()
 
-            initframes = gen_sample[f + MODEL_ORDER - 1]
+            initframes = gen_sample[f + model.order - 1]
 
             feed = {gen_cond: np.reshape(initcond, [1, MODEL_NUM_COND]).astype(np.float32),
                     gen_init: initframes}
@@ -174,7 +179,7 @@ def generate(crbm, gen_init_frame = 0, num_gen = MODEL_ORDER):
             s[0] = s[0] / 32767.0
 
             # soft clip
-            s[0] = softclip(s[0], MODEL_CLIP_WINDOW)
+            s[0] = softclip(s[0], model.clip_window)
 
             # scale [-1, 1] to [filerangelow, filerangehigh]
             s[0] = s[0] * 32767.0
@@ -186,8 +191,8 @@ def generate(crbm, gen_init_frame = 0, num_gen = MODEL_ORDER):
             gen_sample.append(s)
             gen_hidden.append(h)
 
-        gen_sample = np.reshape(np.asarray(gen_sample), [num_gen + MODEL_ORDER, MODEL_NUM_VIS])
-        gen_hidden = np.reshape(np.asarray(gen_hidden), [num_gen, MODEL_NUM_HID])
+        gen_sample = np.reshape(np.asarray(gen_sample), [num_gen + model.order, MODEL_NUM_VIS])
+        gen_hidden = np.reshape(np.asarray(gen_hidden), [num_gen, model.num_hid])
 
         gen_sample = gen_sample * data_std + data_mean
 
@@ -203,15 +208,27 @@ def generate_to_file(num_gen, gen_init_frame = 0):
     plt.title('The Generated Timeseries')
     plt.show()
 
+    # get proper data range
+    data_out = [max(min(s[0] / 32767.0, 1.0), -1.0) for s in gen_sample[0:num_gen]]
+    data_out = np.asarray(data_out)
+
+    # find next avaliable file number
+    i = 0
+    while os.path.exists("output%s.wav" % i) or os.path.exists("output%s.txt" % i):
+        i += 1
+
+    # write wav file
+    sp.io.wavfile.write("output%s.wav" % i, rate, data_out)
+
+    # write txt file
+    text_out = open("output%s.txt" % i, "w")
+    text_out.write('\n'.join("%s: %s" % item for item in sorted(vars(model).items()) if not item[0].startswith('__')))
+    text_out.close()
+
     plt.figure(figsize=(12, 6))
     plt.imshow(gen_hidden.T, cmap='gray', interpolation='nearest', aspect='auto')
     plt.title('Hidden Units Activities')
     plt.show()
-
-    data_out = [max(min(s[0] / 32767.0, 1.0), -1.0) for s in gen_sample[0:num_gen]]
-    data_out = np.asarray(data_out)
-
-    sp.io.wavfile.write("output.wav", rate, data_out)
 
     plt.figure(figsize=(12, 6))
     plt.plot(data_out)

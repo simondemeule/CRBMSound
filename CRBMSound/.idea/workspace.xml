@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc328358-3971-49e2-beac-597918a93c69" name="Default Changelist" comment="" />
+    <list default="true" id="dc328358-3971-49e2-beac-597918a93c69" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRBMSound.py" beforeDir="false" afterPath="$PROJECT_DIR$/CRBMSound.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CRBMTest/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,10 +18,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CRBMSound.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+            <state relative-caret-position="-2663">
+              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -38,6 +43,12 @@
       <find>plt</find>
       <find>gen_init_frame</find>
     </findStrings>
+    <replaceStrings>
+      <replace>model.clip_window</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -51,11 +62,13 @@
     <option name="width" value="834" />
     <option name="height" value="1050" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -87,17 +100,17 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -182,12 +195,14 @@
       <workItem from="1561649244751" duration="320000" />
       <workItem from="1561649676131" duration="1622000" />
       <workItem from="1561653365882" duration="8954000" />
-      <workItem from="1561666572238" duration="5659000" />
+      <workItem from="1561666572238" duration="7828000" />
+      <workItem from="1561743656625" duration="18000" />
+      <workItem from="1561743684651" duration="669000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38284000" />
+    <option name="totallyTimeSpent" value="41140000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -202,7 +217,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15140416" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15506716" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -215,7 +230,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32959184" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50061053" side_tool="true" weight="0.32959184" />
-      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.498779" visible="true" weight="0.32959184" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" sideWeight="0.498779" visible="true" weight="0.32959184" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4993895" weight="0.32959184" />
@@ -224,7 +239,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" x="0" y="0" width="370" height="850" id="Documentation" order="3" sideWeight="0.39726028" side_tool="true" weight="0.2960928" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info active="true" anchor="right" x="381" y="180" width="1097" height="682" id="SciView" order="5" sideWeight="0.60273975" visible="true" weight="0.2960928" />
+      <window_info anchor="right" x="381" y="180" width="1097" height="682" id="SciView" order="5" sideWeight="0.60273975" visible="true" weight="0.2960928" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,10 +306,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CRBMSound.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        <state relative-caret-position="-2663">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
