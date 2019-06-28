@@ -4,6 +4,7 @@
     <list default="true" id="dc328358-3971-49e2-beac-597918a93c69" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../CRBMSound/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CRBMSound/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRBMSound/CRBMSound.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CRBMSound/CRBMSound.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMSound/input.wav" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -175,12 +176,12 @@
       <workItem from="1561666572509" duration="605000" />
       <workItem from="1561668375529" duration="905000" />
       <workItem from="1561743656481" duration="18000" />
-      <workItem from="1561743684764" duration="245000" />
+      <workItem from="1561743684764" duration="565000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27075000" />
+    <option name="totallyTimeSpent" value="27395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />

@@ -1,0 +1,10 @@
+learn_rate: 0.01
+haar_enable: False
+clip_enable: False
+gibbs_generate: 2
+batch_size: 2000
+epochs: 100
+num_hid: 200
+clip_window: 0.6
+gibbs_train: 1
+order: 100
