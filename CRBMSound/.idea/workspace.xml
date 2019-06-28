@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc328358-3971-49e2-beac-597918a93c69" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CRBMSound.py" beforeDir="false" afterPath="$PROJECT_DIR$/CRBMSound.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input.wav" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRBMTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CRBMTest/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +16,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CRBMSound.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2663">
+            <state relative-caret-position="240">
               <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xrbm/models/crbm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3597">
+              <caret line="78" column="53" selection-start-line="78" selection-start-column="53" selection-end-line="78" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -48,6 +55,11 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Simon Demeule" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
@@ -58,9 +70,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="834" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-229" />
+    <option name="y" value="-1417" />
+    <option name="width" value="2375" />
+    <option name="height" value="1308" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -197,12 +211,20 @@
       <workItem from="1561653365882" duration="8954000" />
       <workItem from="1561666572238" duration="7828000" />
       <workItem from="1561743656625" duration="18000" />
-      <workItem from="1561743684651" duration="669000" />
+      <workItem from="1561743684651" duration="7387000" />
     </task>
+    <task id="LOCAL-00001" summary="Added parameter logging and automatic file name increment">
+      <created>1561744589176</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1561744589177</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41140000" />
+    <option name="totallyTimeSpent" value="47858000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -214,23 +236,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="-229" y="-1417" width="2375" height="1308" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15506716" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12001715" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32976973" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3010204" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.29693878" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49935704" visible="true" weight="0.296875" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32959184" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32959184" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50061053" side_tool="true" weight="0.32959184" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="10" sideWeight="0.498779" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32894737" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32976973" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32894737" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50064296" side_tool="true" weight="0.296875" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.498779" weight="0.265625" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4993895" weight="0.32959184" />
@@ -239,14 +261,25 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" x="0" y="0" width="370" height="850" id="Documentation" order="3" sideWeight="0.39726028" side_tool="true" weight="0.2960928" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" x="381" y="180" width="1097" height="682" id="SciView" order="5" sideWeight="0.60273975" visible="true" weight="0.2960928" />
+      <window_info active="true" anchor="right" x="381" y="180" width="1097" height="682" id="SciView" order="5" sideWeight="0.60273975" visible="true" weight="0.5263609" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added parameter logging and automatic file name increment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added parameter logging and automatic file name increment" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/CRBMSound.py</url>
+          <line>122</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -258,7 +291,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/xRBMTest$xRBMTest.coverage" NAME="xRBMTest Coverage Results" MODIFIED="1561649447952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CRBMSound$CRBMSound.coverage" NAME="CRBMSound Coverage Results" MODIFIED="1561664560145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CRBMSound$CRBMSound.coverage" NAME="CRBMSound Coverage Results" MODIFIED="1561754092633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/matplotlib/figure.py">
@@ -299,14 +332,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xrbm/models/crbm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3833">
+        <state relative-caret-position="-3597">
           <caret line="78" column="53" selection-start-line="78" selection-start-column="53" selection-end-line="78" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CRBMSound.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2663">
+        <state relative-caret-position="240">
           <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />

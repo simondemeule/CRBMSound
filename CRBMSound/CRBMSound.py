@@ -71,12 +71,56 @@ data_normalized = [(d - data_mean) / data_std for d in data]
 condition_data = []
 visible_data = []
 
+# indexing forwards from 1
+def haar_sum_upper_bound(n):
+    # Sum[2^j, {j, 0, n}] - 1 = 2^(n + 1) - 2
+    return pow(2, n + 1) - 2
+
+# indexing forwards from 1
+def haar_sum_lower_bound(n):
+    # Sum[2^j, {j, 0, n-1}] = 2^n - 1
+    return pow(2, n) - 1
+
+# indexing backwards from i
+def haar_sum_lower_bound_from(n, i):
+    return i - haar_sum_upper_bound(n) - 1
+
+# indexing backwards from i
+def haar_sum_upper_bound_from(n, i):
+    return i - haar_sum_lower_bound(n) - 1
+
+def haar_sum_num_elements(n):
+    return pow(2, n)
+
+# compute visible and conditional unit activations for each timestep for training
 if model.haar_enable:
-    print("unimplemented")
+    # using haar sampling
+    condition_i_last = []
+    for i in range(haar_sum_num_elements(model.order), len(data_normalized) - 1):
+        condition_i = []
+        if len(condition_i_last) == 0:
+            # compute first set of haar samples
+            for j in range(model.order):
+                sum_j = 0
+                for k in range(haar_sum_lower_bound_from(j, i), haar_sum_upper_bound_from(j, i) + 1):
+                    sum_j = sum_j + data_normalized[k]
+                sum_j = sum_j / haar_sum_num_elements(j)
+                condition_i.append(sum_j)
+        else:
+            # compute later sets with regards to the previous samples
+            for j in range(model.order):
+                condition_i.append(condition_i_last[j] + (data_normalized[haar_sum_lower_bound_from(j + 1, i)] - data_normalized[haar_sum_lower_bound_from(j, i)]) / haar_sum_num_elements(j))
+
+        condition_i_last = condition_i
+        condition_data.append(condition_i)
+        visible_data.append([data_normalized[i]])
 else:
+    # using standard sampling
     for i in range(model.order, len(data_normalized) - 1):
         condition_data.append(data_normalized[i - model.order: i])
         visible_data.append([data_normalized[i]])
+
+print("breakpoint")
 
 condition_data = np.asarray(condition_data)
 visible_data = np.asarray(visible_data)
@@ -155,41 +199,48 @@ def generate(crbm, gen_init_frame = 0, num_gen = model.order):
     gen_init = tf.placeholder(tf.float32, shape = [1, MODEL_NUM_VIS], name = 'gen_init_data')
     gen_op = crbm.predict(gen_cond, gen_init, model.gibbs_generate)
 
-    if model.haar_enable:
-        print("unimplemented")
-    else:
-        for f in range(model.order):
-            gen_sample.append(np.reshape(visible_data[gen_init_frame + f], [1, MODEL_NUM_VIS]))
 
-        for f in range(num_gen):
+    for f in range(model.order):
+        gen_sample.append(np.reshape(visible_data[gen_init_frame + f], [1, MODEL_NUM_VIS]))
+
+    for f in range(num_gen):
+        # initialization for conditional units
+        if model.haar_enable:
+            # using haar sampling
+            # TODO
+            print("unimplemented")
+        else:
+            # using standard sampling
             initcond = np.asarray([gen_sample[s] for s in range(f, f + model.order)]).ravel()
 
-            initframes = gen_sample[f + model.order - 1]
+        # initialization for visible units
+        initframes = gen_sample[f + model.order - 1]
 
-            feed = {gen_cond: np.reshape(initcond, [1, MODEL_NUM_COND]).astype(np.float32),
-                    gen_init: initframes}
+        # run prediction
+        feed = {gen_cond: np.reshape(initcond, [1, MODEL_NUM_COND]).astype(np.float32),
+                gen_init: initframes}
 
-            s, h = sess.run(gen_op, feed_dict=feed)
+        s, h = sess.run(gen_op, feed_dict=feed)
 
-            """
-            # scale normalized to [filerangelow, filerangehigh]
-            s[0] = s[0] * data_std + data_mean
+        """
+        # scale normalized to [filerangelow, filerangehigh]
+        s[0] = s[0] * data_std + data_mean
 
-            # scale [filerangelow, filerangehigh] to [-1, 1]
-            s[0] = s[0] / 32767.0
+        # scale [filerangelow, filerangehigh] to [-1, 1]
+        s[0] = s[0] / 32767.0
 
-            # soft clip
-            s[0] = softclip(s[0], model.clip_window)
+        # soft clip
+        s[0] = softclip(s[0], model.clip_window)
 
-            # scale [-1, 1] to [filerangelow, filerangehigh]
-            s[0] = s[0] * 32767.0
+        # scale [-1, 1] to [filerangelow, filerangehigh]
+        s[0] = s[0] * 32767.0
 
-            # scale [filerangelow, filerangehigh] to normalized
-            s[0] = (s[0] - data_mean) / data_std
-            """
+        # scale [filerangelow, filerangehigh] to normalized
+        s[0] = (s[0] - data_mean) / data_std
+        """
 
-            gen_sample.append(s)
-            gen_hidden.append(h)
+        gen_sample.append(s)
+        gen_hidden.append(h)
 
         gen_sample = np.reshape(np.asarray(gen_sample), [num_gen + model.order, MODEL_NUM_VIS])
         gen_hidden = np.reshape(np.asarray(gen_hidden), [num_gen, model.num_hid])
@@ -224,6 +275,8 @@ def generate_to_file(num_gen, gen_init_frame = 0):
     text_out = open("output%s.txt" % i, "w")
     text_out.write('\n'.join("%s: %s" % item for item in sorted(vars(model).items()) if not item[0].startswith('__')))
     text_out.close()
+
+    print("Successfully created files with index %s" % i)
 
     plt.figure(figsize=(12, 6))
     plt.imshow(gen_hidden.T, cmap='gray', interpolation='nearest', aspect='auto')
