@@ -13,7 +13,7 @@ import xrbm.losses
 class model:
     pass
 
-model.batch_size = 2000
+model.batch_size = 200
 model.clip_enable = False # unimplemented
 model.clip_window = 0.6
 model.epochs = 100
@@ -22,7 +22,7 @@ model.gibbs_train = 1
 model.haar_enable = False # unimplemented
 model.input_file = "inputmetal.wav"
 model.learn_rate = 0.01
-model.num_hid = 200
+model.num_hid = 100
 model.order = 100
 
 rate, data = sp.io.wavfile.read(model.input_file)
@@ -242,10 +242,10 @@ def generate(crbm, gen_init_frame = 0, num_gen = model.order):
         gen_sample.append(s)
         gen_hidden.append(h)
 
-        gen_sample = np.reshape(np.asarray(gen_sample), [num_gen + model.order, MODEL_NUM_VIS])
-        gen_hidden = np.reshape(np.asarray(gen_hidden), [num_gen, model.num_hid])
+    gen_sample = np.reshape(np.asarray(gen_sample), [num_gen + model.order, MODEL_NUM_VIS])
+    gen_hidden = np.reshape(np.asarray(gen_hidden), [num_gen, model.num_hid])
 
-        gen_sample = gen_sample * data_std + data_mean
+    gen_sample = gen_sample * data_std + data_mean
 
     print("Generation successful")
 

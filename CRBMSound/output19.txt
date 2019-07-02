@@ -1,0 +1,11 @@
+batch_size: 200
+clip_enable: False
+clip_window: 0.6
+epochs: 100
+gibbs_generate: 2
+gibbs_train: 1
+haar_enable: False
+input_file: inputmetal.wav
+learn_rate: 0.01
+num_hid: 100
+order: 100
