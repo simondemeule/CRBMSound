@@ -13,32 +13,43 @@ import xrbm.losses
 class model:
     pass
 
-model.batch_size = 200
-model.clip_enable = False # unimplemented
+model.batch_size = 1000
+model.clip_enable = True
 model.clip_window = 0.6
-model.epochs = 100
+model.epochs = 30
 model.gibbs_generate = 2
 model.gibbs_train = 1
-model.haar_enable = False # unimplemented
-model.input_file = "inputmetal.wav"
+model.input_file = "inputbass.wav"
 model.learn_rate = 0.01
+model.multiscale_base = 2
+model.multiscale_enable = False
 model.num_hid = 100
-model.order = 100
+model.num_cond = 8
 
 rate, data = sp.io.wavfile.read(model.input_file)
 
-"""
-def range_data_to_normalized(activations):
+data_max_value = 32767
+data_min_value = -32768
+data_mean = np.mean(data, axis = 0)
+data_std = np.std(data, axis = 0)
 
+def range_data_to_normalized(activation):
+    return (activation * 1.0 - data_mean) / data_std
 
-def range_normalized_to_data(activations):
+def range_normalized_to_data(activation):
+    return (activation * 1.0) * data_std + data_mean
 
+def range_data_to_one(activation):
+    return (activation * 1.0 - data_min_value) * 2.0 / (data_max_value - data_min_value) - 1.0
 
-def range_normalized_to_one(activations):
+def range_one_to_data(activation):
+    return (activation * 1.0 + 1.0) / 2.0 * (data_max_value - data_min_value) + data_min_value
 
+def range_normalized_to_one(activation):
+    return range_data_to_one(range_normalized_to_data(activation))
 
-def range_one_to_normalized(activations):
-
+def range_one_to_normalized(activation):
+    return range_data_to_normalized(range_one_to_data(activation))
 
 # soft clips an input to a range [-1, 1] with a piecewise combination of a sigmoid and a linear region spanning [-window, window]
 def softclip(input, window):
@@ -54,70 +65,90 @@ def softclip(input, window):
             return sigmoid(a * (input - window)) / a + window
         else:
             return sigmoid(a * (input + window)) / a - window
-"""
 
 plt.figure(figsize=(12, 6))
 plt.plot(data)
 plt.title('The Training Sound')
 plt.show()
 
-# normalize with variance 1, mean 0
-data_mean = np.mean(data, axis = 0)
-data_std = np.std(data, axis = 0)
 
-data_normalized = [(d - data_mean) / data_std for d in data]
+data_normalized = [range_data_to_normalized(d) for d in data]
+# testing set
+# data_normalized = [1 for i in range(1000)]
+data_normalized_sigmoid = []
+if model.clip_enable:
+    data_normalized_sigmoid = [range_one_to_normalized(softclip(range_normalized_to_one(d), model.clip_window)) for d in data_normalized]
 
 # prep training data
 condition_data = []
 visible_data = []
 
+# TODO double check, from 1 or 0?
 # indexing forwards from 1
-def haar_sum_upper_bound(n):
-    # Sum[2^j, {j, 0, n}] - 1 = 2^(n + 1) - 2
-    return pow(2, n + 1) - 2
-
-# indexing forwards from 1
-def haar_sum_lower_bound(n):
+def multiscale_sum_lower_bound(n):
     # Sum[2^j, {j, 0, n-1}] = 2^n - 1
     return pow(2, n) - 1
 
-# indexing backwards from i
-def haar_sum_lower_bound_from(n, i):
-    return i - haar_sum_upper_bound(n) - 1
+# indexing forwards from 1
+def multiscale_sum_upper_bound(n):
+    # Sum[2^j, {j, 0, n}] - 1 = 2^(n + 1) - 2
+    return multiscale_sum_lower_bound(n + 1) - 1
 
 # indexing backwards from i
-def haar_sum_upper_bound_from(n, i):
-    return i - haar_sum_lower_bound(n) - 1
+def multiscale_sum_upper_bound_from(n, i):
+    return i - multiscale_sum_lower_bound(n) - 1
 
-def haar_sum_num_elements(n):
+# indexing backwards from i
+def multiscale_sum_lower_bound_from(n, i):
+    return i - multiscale_sum_upper_bound(n) - 1
+
+def multiscale_sum_num_elements(n):
     return pow(2, n)
 
+# TODO define cond data ranges using this to allow arbitrary multiscale rules
+def multiscale_sum_num_elements_integral(n):
+    i = 0
+    for m in range(n):
+        i += multiscale_sum_num_elements(m)
+    return i
+
 # compute visible and conditional unit activations for each timestep for training
-if model.haar_enable:
-    # using haar sampling
+if model.multiscale_enable:
+    # using multiscale sampling
     condition_i_last = []
-    for i in range(haar_sum_num_elements(model.order), len(data_normalized) - 1):
+    for i in range(multiscale_sum_num_elements(model.num_cond), len(data_normalized) - 1):
         condition_i = []
         if len(condition_i_last) == 0:
-            # compute first set of haar samples
-            for j in range(model.order):
+            # compute first set of multiscale samples
+            for j in range(model.num_cond):
                 sum_j = 0
-                for k in range(haar_sum_lower_bound_from(j, i), haar_sum_upper_bound_from(j, i) + 1):
-                    sum_j = sum_j + data_normalized[k]
-                sum_j = sum_j / haar_sum_num_elements(j)
+                for k in range(multiscale_sum_lower_bound_from(j, i), multiscale_sum_upper_bound_from(j, i) + 1):
+                    # apply softclip if needed
+                    if model.clip_enable:
+                        sum_j = sum_j + data_normalized_sigmoid[k]
+                    else:
+                        sum_j = sum_j + data_normalized[k]
+                sum_j = sum_j / multiscale_sum_num_elements(j)
                 condition_i.append(sum_j)
         else:
             # compute later sets with regards to the previous samples
-            for j in range(model.order):
-                condition_i.append(condition_i_last[j] + (data_normalized[haar_sum_lower_bound_from(j + 1, i)] - data_normalized[haar_sum_lower_bound_from(j, i)]) / haar_sum_num_elements(j))
+            for j in range(model.num_cond):
+                if model.clip_enable:
+                    condition_i.append(condition_i_last[j] + (data_normalized_sigmoid[multiscale_sum_lower_bound_from(j + 1, i)] - data_normalized_sigmoid[multiscale_sum_lower_bound_from(j, i)]) / multiscale_sum_num_elements(j))
+                else:
+                    condition_i.append(condition_i_last[j] + (data_normalized[multiscale_sum_lower_bound_from(j + 1, i)] - data_normalized[multiscale_sum_lower_bound_from(j, i)]) / multiscale_sum_num_elements(j))
 
         condition_i_last = condition_i
         condition_data.append(condition_i)
         visible_data.append([data_normalized[i]])
 else:
     # using standard sampling
-    for i in range(model.order, len(data_normalized) - 1):
-        condition_data.append(data_normalized[i - model.order: i])
+    for i in range(model.num_cond, len(data_normalized) - 1):
+        # apply softclip if needed
+        if model.clip_enable:
+            condition_data.append(data_normalized_sigmoid[i - model.num_cond: i])
+        else:
+            condition_data.append(data_normalized[i - model.num_cond: i])
         visible_data.append([data_normalized[i]])
 
 print("breakpoint")
@@ -188,7 +219,7 @@ for epoch in range(model.epochs):
           (epoch + 1, model.epochs, reconstruction_cost))
 
 # define generator
-def generate(crbm, gen_init_frame = 0, num_gen = model.order):
+def generate(crbm, gen_init_frame = 0, num_gen = model.num_cond):
     print('Generating %d frames: ' % (num_gen))
 
     gen_sample = []
@@ -200,21 +231,21 @@ def generate(crbm, gen_init_frame = 0, num_gen = model.order):
     gen_op = crbm.predict(gen_cond, gen_init, model.gibbs_generate)
 
 
-    for f in range(model.order):
+    for f in range(model.num_cond):
         gen_sample.append(np.reshape(visible_data[gen_init_frame + f], [1, MODEL_NUM_VIS]))
 
     for f in range(num_gen):
         # initialization for conditional units
-        if model.haar_enable:
-            # using haar sampling
+        if model.multiscale_enable:
+            # using multiscale sampling
             # TODO
             print("unimplemented")
         else:
             # using standard sampling
-            initcond = np.asarray([gen_sample[s] for s in range(f, f + model.order)]).ravel()
+            initcond = np.asarray([gen_sample[s] for s in range(f, f + model.num_cond)]).ravel()
 
         # initialization for visible units
-        initframes = gen_sample[f + model.order - 1]
+        initframes = gen_sample[f + model.num_cond - 1]
 
         # run prediction
         feed = {gen_cond: np.reshape(initcond, [1, MODEL_NUM_COND]).astype(np.float32),
@@ -222,30 +253,16 @@ def generate(crbm, gen_init_frame = 0, num_gen = model.order):
 
         s, h = sess.run(gen_op, feed_dict=feed)
 
-        """
-        # scale normalized to [filerangelow, filerangehigh]
-        s[0] = s[0] * data_std + data_mean
-
-        # scale [filerangelow, filerangehigh] to [-1, 1]
-        s[0] = s[0] / 32767.0
-
-        # soft clip
-        s[0] = softclip(s[0], model.clip_window)
-
-        # scale [-1, 1] to [filerangelow, filerangehigh]
-        s[0] = s[0] * 32767.0
-
-        # scale [filerangelow, filerangehigh] to normalized
-        s[0] = (s[0] - data_mean) / data_std
-        """
+        if model.clip_enable:
+            s[0] = range_one_to_normalized(softclip(range_normalized_to_one(s[0]), model.clip_window))
 
         gen_sample.append(s)
         gen_hidden.append(h)
 
-    gen_sample = np.reshape(np.asarray(gen_sample), [num_gen + model.order, MODEL_NUM_VIS])
+    gen_sample = np.reshape(np.asarray(gen_sample), [num_gen + model.num_cond, MODEL_NUM_VIS])
     gen_hidden = np.reshape(np.asarray(gen_hidden), [num_gen, model.num_hid])
 
-    gen_sample = gen_sample * data_std + data_mean
+    gen_sample = range_normalized_to_data(gen_sample)
 
     print("Generation successful")
 
@@ -260,7 +277,7 @@ def generate_to_file(num_gen, gen_init_frame = 0):
     plt.show()
 
     # get proper data range
-    data_out = [max(min(s[0] / 32767.0, 1.0), -1.0) for s in gen_sample[0:num_gen]]
+    data_out = [max(min(range_data_to_one(s[0]), 1.0), -1.0) for s in gen_sample[0:num_gen]]
     data_out = np.asarray(data_out)
 
     # find next avaliable file number
