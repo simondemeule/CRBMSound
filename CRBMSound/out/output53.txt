@@ -1,0 +1,12 @@
+batch_size: 1000
+clip_enable: False
+clip_window: 0.9
+epochs: 10
+gibbs_generate: 2
+gibbs_train: 1
+input_file: inputpluck.wav
+learn_rate: 0.01
+multiscale_base: 2
+multiscale_enable: False
+num_cond: 10
+num_hid: 100

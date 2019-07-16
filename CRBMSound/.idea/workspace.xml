@@ -4,6 +4,72 @@
     <list default="true" id="dc328358-3971-49e2-beac-597918a93c69" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CRBMSound.py" beforeDir="false" afterPath="$PROJECT_DIR$/CRBMSound.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inputbass.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inputcello.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inputmetal.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inputpluck.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output10.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output11.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output12.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output13.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output14.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output15.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output16.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output17.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output17h.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output17v.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output18.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output18.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output19.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output19.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output20.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output20.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output21.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output21.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output22.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output22.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output23.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output23.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output24.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output24.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output25.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output25.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output26.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output26.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output27.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output27.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output28.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output28.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output29.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output29.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output3.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output30.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output30.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output31.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output31.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output32.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output32.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output33.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output33.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output34.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output34.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output35.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output35.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output36.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output36.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output4.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output5.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output6.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output7.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output8.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output9.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output9.wav" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRBMTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CRBMTest/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,20 +83,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CRBMSound.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-415">
-              <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+            <state relative-caret-position="605">
+              <caret line="632" column="28" selection-start-line="632" selection-start-column="28" selection-end-line="632" selection-end-column="28" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#15#24#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xrbm/models/crbm.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1125">
-              <caret line="78" column="53" selection-start-line="78" selection-start-column="53" selection-end-line="78" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -50,6 +107,7 @@
       <find>SEQ_LEN</find>
       <find>plt</find>
       <find>gen_init_frame</find>
+      <find>MODEL_NUM</find>
     </findStrings>
     <replaceStrings>
       <replace>model.clip_window</replace>
@@ -81,6 +139,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -95,12 +154,6 @@
             </path>
             <path>
               <item name="CRBMSound" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CRBMSound" type="462c0819:PsiDirectoryNode" />
-              <item name="xrbm" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CRBMSound" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
@@ -112,7 +165,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -120,8 +172,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
@@ -212,7 +267,13 @@
       <workItem from="1561743656625" duration="18000" />
       <workItem from="1561743684651" duration="8114000" />
       <workItem from="1562091352480" duration="8730000" />
-      <workItem from="1562171935468" duration="2468000" />
+      <workItem from="1562171935468" duration="14624000" />
+      <workItem from="1562283430749" duration="681000" />
+      <workItem from="1562348417379" duration="28836000" />
+      <workItem from="1562457092280" duration="8784000" />
+      <workItem from="1562518155049" duration="9050000" />
+      <workItem from="1562762333142" duration="2070000" />
+      <workItem from="1563307040582" duration="2338000" />
     </task>
     <task id="LOCAL-00001" summary="Added parameter logging and automatic file name increment">
       <created>1561744589176</created>
@@ -225,7 +286,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59783000" />
+    <option name="totallyTimeSpent" value="123698000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -237,31 +298,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17460318" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18559219" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3010204" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49935704" visible="true" weight="0.3857143" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49935704" weight="0.39591837" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32894737" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32976973" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32959184" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32894737" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50064296" side_tool="true" weight="0.296875" />
-      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.498779" weight="0.30510205" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.498779" visible="true" weight="0.25714287" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4993895" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" x="0" y="0" width="370" height="850" id="Documentation" order="3" sideWeight="0.39726028" side_tool="true" weight="0.2960928" />
+      <window_info anchor="right" x="0" y="0" width="370" height="850" id="Documentation" order="3" sideWeight="0.043956045" side_tool="true" visible="true" weight="0.4010989" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info active="true" anchor="right" x="381" y="180" width="1097" height="682" id="SciView" order="5" sideWeight="0.60273975" visible="true" weight="0.25824177" />
+      <window_info active="true" anchor="right" x="381" y="180" width="1097" height="682" id="SciView" order="5" sideWeight="0.95604396" visible="true" weight="0.4010989" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +345,56 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/xRBMTest$xRBMTest.coverage" NAME="xRBMTest Coverage Results" MODIFIED="1561649447952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CRBMSound$CRBMSound.coverage" NAME="CRBMSound Coverage Results" MODIFIED="1562181373074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CRBMSound$CRBMSound.coverage" NAME="CRBMSound Coverage Results" MODIFIED="1562522413349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>np.roots([i * 0.2 for i in range(100)])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>condition_i[0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>multiscale_sum_num_elements(0)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>visible_data[0][0] - condition_data[1][11]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>visible_data[0][0]-condition_data[1][11]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>visible_data[0][0]-condition_data[1][0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>visible_data[0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>condition_data[0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>condition_data[1]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/matplotlib/figure.py">
@@ -309,13 +419,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xRBMTest.py" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26355">
-          <caret line="1757" selection-start-line="1757" selection-end-line="1757" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_bundle/pydev_umd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
@@ -323,20 +426,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CRBMSound.py">
+    <entry file="file://$USER_HOME$/Library/Python/2.7/lib/python/site-packages/numpy/core/fromnumeric.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-415">
-          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="4170">
+          <caret line="291" selection-start-line="291" selection-end-line="291" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Python/2.7/lib/python/site-packages/tensorflow/python/ops/control_flow_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="3088" selection-start-line="3088" selection-end-line="3088" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xrbm/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/pycharm.vmoptions">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17190">
+          <caret line="1146" selection-start-line="1146" selection-end-line="1146" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xrbm/models/crbm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="78" column="53" selection-start-line="78" selection-start-column="53" selection-end-line="78" selection-end-column="53" />
+        <state relative-caret-position="648">
+          <caret line="335" selection-start-line="335" selection-end-line="335" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xrbm/train/cdk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRBMSound.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="632" column="28" selection-start-line="632" selection-start-column="28" selection-end-line="632" selection-end-column="28" />
+          <folding>
+            <element signature="e#15#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
