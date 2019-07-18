@@ -15,14 +15,14 @@ class model:
     pass
 
 model.batch_size = 1000
-model.clip_enable = False
+model.clip_enable = True
 model.clip_window = 0.8
-model.epochs = 30
+model.epochs = 50
 model.gibbs_generate = 2
 model.gibbs_train = 1
-model.input_file = "drumsamekick/drumsamekick1.wav"
+model.input_file = "inputmetal.wav"
 model.learn_rate = 0.01
-model.multiscale_base = 2
+model.multiscale_base = 1.15
 model.multiscale_enable = False
 model.num_hid = 50
 model.num_cond = 50
@@ -82,11 +82,24 @@ if model.clip_enable:
 condition_data = []
 visible_data = []
 
-# TODO: either trash this or fix it. Super broken at the moment. The first 4 functions are fine, but the data prep / generation routine are completely broken and need to be rewritten and tested.
+# sizes of n = 0, 1, 2 with base 2
+#
+#   |   0   1   2   3   4   5   6   7   8
+#   |   •   •   •   •   •   •   •   •   •
+# 0 |       X
+# 1 |           X
+# 2 |                   X
 
-"""
 def multiscale_size(n):
     return int(math.ceil(pow(model.multiscale_base, n)))
+
+# offsets of n = 0, 1, 2 with base 2
+#
+#   |   0   1   2   3   4   5   6   7   8
+#   |   •   •   •   •   •   •   •   •   •
+# 0 |   X
+# 1 |       X
+# 2 |               X
 
 multiscale_offset_computed = [0]
 
@@ -100,23 +113,59 @@ def multiscale_offset(n):
         multiscale_offset_computed.append(next)
         return multiscale_offset(n)
 
-def multiscale_total_size():
+def multiscale_size_total():
     return multiscale_offset(model.num_cond)
+
+# ranges of n = 0, 1, 2 with base 2
+#
+#   |     i - 7   i - 5   i - 3   i - 1
+#   | i - 8   i - 6   i - 4   i - 2     i
+#   |   •   •   •   •   •   •   •   •   •
+# 0 |                               |
+# 1 |                       |---|
+# 2 |       |-----------|
+#
+# ranges of n = 0, 1, 2 for i_prev relative to i (i_prev = i - 1)
+#
+#   |     i - 7   i - 5   i - 3   i - 1
+#   | i - 8   i - 6   i - 4   i - 2     i
+#   |   •   •   •   •   •   •   •   •   •
+# 0 |                           |
+# 1 |                   |---|
+# 2 |   |-----------|
+#
+# X marks lagging element (which is subtracted to the previous range to get the current range)
+# O marks leading element (which is added to the previous range to get the current range)
+#
+#   |     i - 7   i - 5   i - 3   i - 1
+#   | i - 8   i - 6   i - 4   i - 2     i
+#   |   •   •   •   •   •   •   •   •   •
+# 0 |                           X   O
+# 1 |                   X       O
+# 2 |   X               O
 
 def multiscale_range_reverse_from(n, i):
     # i is the excluded visible unit. first conditional unit contains i - 1
     return range((i - 1) - (multiscale_offset(n) + multiscale_size(n) - 1),(i - 1) - multiscale_offset(n) + 1)
 
+def multiscale_range_reverse_from_total(i):
+    return range(i - multiscale_size_total(), i)
+
+def multiscale_lagging_reverse_from(n, i):
+    return (i - 1) - multiscale_offset(n + 1)
+
+def multiscale_leading_reverse_from(n, i):
+    return (i - 1) - multiscale_offset(n)
+
 if model.multiscale_enable:
     for i in range(model.num_cond):
         print("unit %i\tsize %i\toffset %i" % (i, multiscale_size(i), multiscale_offset(i)))
-        print(multiscale_range_reverse_from(i, 0))
 
 # compute visible and conditional unit activations for each timestep for training
 if model.multiscale_enable:
     # using multiscale sampling
     condition_i_last = []
-    for i in range(multiscale_total_size() + 1, len(data_normalized)):
+    for i in range(multiscale_size_total() + 1, len(data_normalized)):
         condition_i = []
         if len(condition_i_last) == 0:
             # compute first set of multiscale samples
@@ -128,28 +177,27 @@ if model.multiscale_enable:
                         sum_n = sum_n + data_normalized_sigmoid[k]
                     else:
                         sum_n = sum_n + data_normalized[k]
-                sum_n = sum_n / multiscale_sum_num_elements(n)
+                sum_n = sum_n / multiscale_size(n)
                 condition_i.append(sum_n)
         else:
             # compute later sets with regards to the previous samples
             for n in range(model.num_cond):
                 if model.clip_enable:
-                    condition_i.append(condition_i_last[n] + (data_normalized_sigmoid[multiscale_sum_lower_bound_from(n + 1, i)] - data_normalized_sigmoid[multiscale_sum_lower_bound_from(n, i)]) / multiscale_sum_num_elements(n))
+                    condition_i.append(condition_i_last[n] + (data_normalized_sigmoid[multiscale_leading_reverse_from(n, i)] - data_normalized_sigmoid[multiscale_lagging_reverse_from(n, i)]) / multiscale_size(n))
                 else:
-                    condition_i.append(condition_i_last[n] + (data_normalized[multiscale_sum_lower_bound_from(n + 1, i)] - data_normalized[multiscale_sum_lower_bound_from(n, i)]) / multiscale_sum_num_elements(n))
+                    condition_i.append(condition_i_last[n] + (data_normalized[multiscale_leading_reverse_from(n, i)] - data_normalized[multiscale_lagging_reverse_from(n, i)]) / multiscale_size(n))
         condition_i_last = condition_i
         condition_data.append(condition_i)
         visible_data.append([data_normalized[i]])
 else:
-"""
-# using standard sampling
-for i in range(model.num_cond, len(data_normalized) - 1):
-    # apply softclip if needed
-    if model.clip_enable:
-        condition_data.append(data_normalized_sigmoid[i - model.num_cond: i])
-    else:
-        condition_data.append(data_normalized[i - model.num_cond: i])
-    visible_data.append([data_normalized[i]])
+    # using standard sampling
+    for i in range(model.num_cond, len(data_normalized) - 1):
+        # apply softclip if needed
+        if model.clip_enable:
+            condition_data.append(data_normalized_sigmoid[i - model.num_cond: i])
+        else:
+            condition_data.append(data_normalized[i - model.num_cond: i])
+        visible_data.append([data_normalized[i]])
 
 condition_data = np.asarray(condition_data)
 visible_data = np.asarray(visible_data)
@@ -224,39 +272,39 @@ def generate(crbm, gen_init_frame = 0, num_gen = model.num_cond):
     gen_sample = []
     gen_hidden = []
     initcond = []
+    initcond_last = []
 
     gen_cond = tf.placeholder(tf.float32, shape = [1, model.num_cond], name = 'gen_cond_data')
     gen_init = tf.placeholder(tf.float32, shape = [1, 1], name = 'gen_init_data')
     gen_op = crbm.predict(gen_cond, gen_init, model.gibbs_generate)
-    """
     if model.multiscale_enable:
         # using multiscale sampling
+        gen_init_frame += multiscale_size_total()
 
         # first initialization for samples
-        for f in range(multiscale_sum_num_elements_integral(model.num_cond - 1)):
-            gen_sample.append(np.reshape(visible_data[gen_init_frame + f], [1, 1]))
+        for i in multiscale_range_reverse_from_total(gen_init_frame):
+            if model.clip_enable:
+                gen_sample.append(np.reshape(data_normalized_sigmoid[i], [1, 1]))
+            else:
+                gen_sample.append(np.reshape(data_normalized[i], [1, 1]))
 
-        for f in range(num_gen):
-            if f == 0:
+        for i in range(multiscale_size_total(), num_gen + multiscale_size_total()):
+            if len(initcond_last) == 0:
                 # first initialization for conditional units
-                a = gen_init_frame
-                initcond = np.asarray(condition_data[a])
+                initcond = np.asarray(condition_data[gen_init_frame - multiscale_size_total()])
+                initcond_last = initcond
 
                 # first initialization for visible unit (copy of previous value)
-                b = gen_init_frame + multiscale_sum_num_elements_integral(model.num_cond - 1) - 1
-                initframes = gen_sample[b]
+                initframes = gen_sample[len(gen_sample) - 1]
             else:
                 # recursive initialization for conditional units
-                # TODO: does condition_data[i] correspond to order i or model.num_cond - i ?
-                for j in range(model.num_cond):
-                    a = multiscale_sum_lower_bound_from(j + 1, f + multiscale_sum_num_elements_integral(model.num_cond - 1))
-                    b = multiscale_sum_lower_bound_from(j, f + multiscale_sum_num_elements_integral(model.num_cond - 1))
-                    initcond[j] = (initcond[j] + (gen_sample[a] - gen_sample[b]) / multiscale_sum_num_elements(j))
-
+                initcond = [];
+                for n in range(model.num_cond):
+                    initcond.append(initcond_last[n] + (gen_sample[multiscale_leading_reverse_from(n, i)] - gen_sample[multiscale_lagging_reverse_from(n, i)]) / multiscale_size(n))
+                initcond_last = initcond
 
                 # recursive initialization for visible unit (copy of previous value)
-                i = f + multiscale_sum_num_elements_integral(model.num_cond - 1) - 1
-                initframes = gen_sample[i]
+                initframes = gen_sample[len(gen_sample) - 1]
 
             # run prediction
             feed = {gen_cond: np.reshape(initcond, [1, model.num_cond]).astype(np.float32),
@@ -270,37 +318,37 @@ def generate(crbm, gen_init_frame = 0, num_gen = model.num_cond):
             gen_sample.append(s)
             gen_hidden.append(h)
 
-        gen_sample = np.reshape(np.asarray(gen_sample), [num_gen + multiscale_sum_num_elements_integral(model.num_cond - 1), 1])
+        gen_sample = gen_sample[multiscale_size_total():]
+        gen_sample = np.reshape(np.asarray(gen_sample), [num_gen, 1])
         gen_hidden = np.reshape(np.asarray(gen_hidden), [num_gen, model.num_hid])
     else:
-    """
-    # using standard sampling
-
-    # initialization for visible units
-    for f in range(model.num_cond):
-        gen_sample.append(np.reshape(visible_data[gen_init_frame + f], [1, 1]))
-
-    for f in range(num_gen):
-        # initialization for conditional units
-        initcond = np.asarray([gen_sample[s] for s in range(f, f + model.num_cond)])
+        # using standard sampling
 
         # initialization for visible units
-        initframes = gen_sample[f + model.num_cond - 1]
+        for i in range(model.num_cond):
+            gen_sample.append(np.reshape(visible_data[gen_init_frame + i], [1, 1]))
 
-        # run prediction
-        feed = {gen_cond: np.reshape(initcond, [1, model.num_cond]).astype(np.float32),
-                gen_init: initframes}
+        for i in range(num_gen):
+            # initialization for conditional units
+            initcond = np.asarray([gen_sample[s] for s in range(i, i + model.num_cond)])
 
-        s, h = sess.run(gen_op, feed_dict=feed)
+            # initialization for visible units
+            initframes = gen_sample[i + model.num_cond - 1]
 
-        if model.clip_enable:
-            s[0] = range_one_to_normalized(softclip(range_normalized_to_one(s[0]), model.clip_window))
+            # run prediction
+            feed = {gen_cond: np.reshape(initcond, [1, model.num_cond]).astype(np.float32),
+                    gen_init: initframes}
 
-        gen_sample.append(s)
-        gen_hidden.append(h)
+            s, h = sess.run(gen_op, feed_dict=feed)
 
-    gen_sample = np.reshape(np.asarray(gen_sample), [num_gen + model.num_cond, 1])
-    gen_hidden = np.reshape(np.asarray(gen_hidden), [num_gen, model.num_hid])
+            if model.clip_enable:
+                s[0] = range_one_to_normalized(softclip(range_normalized_to_one(s[0]), model.clip_window))
+
+            gen_sample.append(s)
+            gen_hidden.append(h)
+
+        gen_sample = np.reshape(np.asarray(gen_sample), [num_gen + model.num_cond, 1])
+        gen_hidden = np.reshape(np.asarray(gen_hidden), [num_gen, model.num_hid])
 
     gen_sample = range_normalized_to_data(gen_sample)
 
@@ -580,6 +628,9 @@ def plot_two_polynomial(a_as_polynomial, s_as_polynomial):
     plt.ylim(-40, 40)
     plt.show()
 
+model.meta = "original"
+generate_to_file(30000, 0)
+
 """
 sess.run(tf.assign(crbm.W, [[0, 0, 0, 0, 0]]))
 sess.run(tf.assign(crbm.A, [[0], [0], [0], [0], [1]]))
@@ -594,6 +645,7 @@ vbias = sess.run(crbm.vbias)
 hbias = sess.run(crbm.hbias)
 """
 
+"""
 A = sess.run(crbm.A)            # idx by cond -> idx by vis
 B = sess.run(crbm.B)            # idx by cond -> idx by hid
 W = sess.run(crbm.W)            # idx by vis  -> idx by hid
@@ -631,6 +683,7 @@ sess.run(tf.assign(crbm.vbias, [0]))
 
 model.meta = "eliminating hidden contributions and offset"
 generate_to_file(30000, 1000)
+"""
 
 """
 A = sess.run(crbm.A)

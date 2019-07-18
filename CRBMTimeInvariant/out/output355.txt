@@ -1,0 +1,13 @@
+batch_size: 1000
+clip_enable: True
+clip_window: 0.8
+epochs: 50
+gibbs_generate: 2
+gibbs_train: 1
+input_file: inputmetal.wav
+learn_rate: 0.01
+meta: original
+multiscale_base: 1.15
+multiscale_enable: True
+num_cond: 50
+num_hid: 500

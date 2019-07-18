@@ -1,0 +1,13 @@
+batch_size: 1000
+clip_enable: False
+clip_window: 0.8
+epochs: 30
+gibbs_generate: 2
+gibbs_train: 1
+input_file: drumsamekick/drumsamekick1.wav
+learn_rate: 0.01
+meta: original
+multiscale_base: 2
+multiscale_enable: True
+num_cond: 4
+num_hid: 50
