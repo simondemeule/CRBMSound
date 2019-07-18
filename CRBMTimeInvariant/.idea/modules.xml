@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../CRBMTimeInvariant/.idea/xRBMTimeInvariant.iml" filepath="$PROJECT_DIR$/../CRBMTimeInvariant/.idea/xRBMTimeInvariant.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/CRBMTimeInvariant.iml" filepath="$PROJECT_DIR$/.idea/CRBMTimeInvariant.iml" />
     </modules>
   </component>
 </project>

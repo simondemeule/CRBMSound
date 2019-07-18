@@ -17,15 +17,15 @@ class model:
 model.batch_size = 1000
 model.clip_enable = False
 model.clip_window = 0.8
-model.epochs = 100
+model.epochs = 30
 model.gibbs_generate = 2
 model.gibbs_train = 1
-model.input_file = "inputpluck.wav"
+model.input_file = "drumsamekick/drumsamekick1.wav"
 model.learn_rate = 0.01
 model.multiscale_base = 2
 model.multiscale_enable = False
-model.num_hid = 30
-model.num_cond = 30
+model.num_hid = 50
+model.num_cond = 50
 
 rate, data = sp.io.wavfile.read("in/" + model.input_file)
 

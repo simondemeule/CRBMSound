@@ -1,0 +1,1163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dc328358-3971-49e2-beac-597918a93c69" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/xRBMFourier.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRBMTimeInvariant.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/.idea/dictionaries/simondemeule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/simondemeule.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/.idea/vagrant.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vagrant.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/in/inputbass.wav" beforeDir="false" afterPath="$PROJECT_DIR$/in/inputbass.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/in/inputbass.wav.asd" beforeDir="false" afterPath="$PROJECT_DIR$/in/inputbass.wav.asd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/in/inputcello.wav" beforeDir="false" afterPath="$PROJECT_DIR$/in/inputcello.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/in/inputcelloshort.wav" beforeDir="false" afterPath="$PROJECT_DIR$/in/inputcelloshort.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/in/inputcellotail.wav" beforeDir="false" afterPath="$PROJECT_DIR$/in/inputcellotail.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/in/inputmetal.wav" beforeDir="false" afterPath="$PROJECT_DIR$/in/inputmetal.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/in/inputpizz.wav" beforeDir="false" afterPath="$PROJECT_DIR$/in/inputpizz.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/in/inputpluck.wav" beforeDir="false" afterPath="$PROJECT_DIR$/in/inputpluck.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/in/inputpluck.wav.asd" beforeDir="false" afterPath="$PROJECT_DIR$/in/inputpluck.wav.asd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/in/inputsine.wav" beforeDir="false" afterPath="$PROJECT_DIR$/in/inputsine.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output0.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output0.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output1.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output1.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output10.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output10.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output100.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output100.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output100.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output100.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output101.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output101.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output101.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output101.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output102.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output102.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output102.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output102.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output103.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output103.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output103.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output103.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output104.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output104.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output104.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output104.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output105.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output105.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output105.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output105.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output106.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output106.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output106.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output106.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output107.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output107.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output107.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output107.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output108.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output108.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output108.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output108.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output109.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output109.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output109.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output109.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output11.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output11.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output110.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output110.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output110.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output110.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output111.m4a" beforeDir="false" afterPath="$PROJECT_DIR$/out/output111.m4a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output111.m4a.asd" beforeDir="false" afterPath="$PROJECT_DIR$/out/output111.m4a.asd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output111.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output111.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output111.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output111.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output112.m4a" beforeDir="false" afterPath="$PROJECT_DIR$/out/output112.m4a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output112.m4a.asd" beforeDir="false" afterPath="$PROJECT_DIR$/out/output112.m4a.asd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output112.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output112.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output112.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output112.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output113.m4a" beforeDir="false" afterPath="$PROJECT_DIR$/out/output113.m4a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output113.m4a.asd" beforeDir="false" afterPath="$PROJECT_DIR$/out/output113.m4a.asd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output113.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output113.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output113.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output113.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output114.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output114.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output114.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output114.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output115.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output115.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output115.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output115.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output116.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output116.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output116.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output116.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output117.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output117.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output117.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output117.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output118.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output118.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output118.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output118.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output119.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output119.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output119.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output119.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output12.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output12.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output120.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output120.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output120.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output120.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output121.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output121.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output121.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output121.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output122.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output122.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output122.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output122.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output123.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output123.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output123.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output123.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output124.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output124.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output124.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output124.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output125.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output125.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output125.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output125.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output126.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output126.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output126.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output126.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output127.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output127.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output127.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output127.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output128.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output128.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output128.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output128.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output129.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output129.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output129.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output129.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output13.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output13.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output130.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output130.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output130.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output130.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output131.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output131.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output131.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output131.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output132.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output132.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output132.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output132.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output133.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output133.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output133.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output133.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output134.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output134.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output134.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output134.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output135.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output135.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output135.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output135.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output136.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output136.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output136.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output136.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output137.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output137.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output137.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output137.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output138.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output138.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output138.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output138.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output139.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output139.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output139.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output139.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output14.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output14.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output140.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output140.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output140.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output140.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output141.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output141.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output141.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output141.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output142.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output142.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output142.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output142.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output143.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output143.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output143.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output143.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output144.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output144.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output144.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output144.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output145.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output145.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output145.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output145.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output146.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output146.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output146.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output146.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output147.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output147.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output147.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output147.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output148.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output148.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output148.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output148.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output149.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output149.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output149.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output149.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output15.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output15.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output150.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output150.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output150.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output150.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output151.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output151.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output151.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output151.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output152.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output152.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output152.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output152.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output153.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output153.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output153.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output153.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output154.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output154.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output154.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output154.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output155.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output155.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output155.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output155.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output156.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output156.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output156.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output156.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output157.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output157.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output157.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output157.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output158.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output158.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output158.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output158.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output159.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output159.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output159.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output159.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output16.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output16.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output160.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output160.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output160.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output160.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output161.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output161.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output161.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output161.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output162.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output162.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output162.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output162.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output163.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output163.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output163.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output163.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output164.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output164.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output164.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output164.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output165.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output165.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output165.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output165.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output166.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output166.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output166.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output166.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output167.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output167.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output167.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output167.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output168.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output168.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output168.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output168.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output169.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output169.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output169.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output169.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output17.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output17.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output170.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output170.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output170.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output170.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output171.m4a" beforeDir="false" afterPath="$PROJECT_DIR$/out/output171.m4a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output171.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output171.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output171.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output171.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output172.m4a" beforeDir="false" afterPath="$PROJECT_DIR$/out/output172.m4a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output172.m4a.asd" beforeDir="false" afterPath="$PROJECT_DIR$/out/output172.m4a.asd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output172.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output172.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output172.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output172.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output173.m4a" beforeDir="false" afterPath="$PROJECT_DIR$/out/output173.m4a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output173.m4a.asd" beforeDir="false" afterPath="$PROJECT_DIR$/out/output173.m4a.asd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output173.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output173.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output173.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output173.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output174.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output174.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output174.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output174.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output175.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output175.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output175.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output175.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output176.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output176.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output176.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output176.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output177.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output177.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output177.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output177.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output178.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output178.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output178.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output178.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output179.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output179.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output179.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output179.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output17h.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/output17h.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output17v.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/output17v.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output18.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output18.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output18.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output18.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output180.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output180.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output180.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output180.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output181.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output181.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output181.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output181.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output182.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output182.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output182.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output182.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output183.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output183.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output183.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output183.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output184.m4a" beforeDir="false" afterPath="$PROJECT_DIR$/out/output184.m4a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output184.m4a.asd" beforeDir="false" afterPath="$PROJECT_DIR$/out/output184.m4a.asd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output184.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output184.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output184.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output184.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output185.m4a" beforeDir="false" afterPath="$PROJECT_DIR$/out/output185.m4a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output185.m4a.asd" beforeDir="false" afterPath="$PROJECT_DIR$/out/output185.m4a.asd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output185.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output185.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output185.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output185.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output186.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output186.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output186.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output186.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output187.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output187.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output187.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output187.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output188.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output188.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output188.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output188.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output189.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output189.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output189.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output189.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output19.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output19.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output19.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output19.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output190.m4a" beforeDir="false" afterPath="$PROJECT_DIR$/out/output190.m4a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output190.m4a.asd" beforeDir="false" afterPath="$PROJECT_DIR$/out/output190.m4a.asd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output190.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output190.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output190.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output190.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output191.m4a" beforeDir="false" afterPath="$PROJECT_DIR$/out/output191.m4a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output191.m4a.asd" beforeDir="false" afterPath="$PROJECT_DIR$/out/output191.m4a.asd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output191.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output191.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output191.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output191.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output192.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output192.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output192.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output192.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output193.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output193.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output193.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output193.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output194.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output194.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output194.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output194.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output195.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output195.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output195.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output195.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output196.m4a" beforeDir="false" afterPath="$PROJECT_DIR$/out/output196.m4a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output196.m4a.asd" beforeDir="false" afterPath="$PROJECT_DIR$/out/output196.m4a.asd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output196.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output196.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output196.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output196.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output197.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output197.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output197.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output197.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output198.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output198.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output198.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output198.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output199.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output199.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output199.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output199.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output2.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output2.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output20.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output20.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output20.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output20.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output200.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output200.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output200.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output200.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output201.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output201.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output201.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output201.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output202.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output202.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output202.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output202.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output203.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output203.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output203.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output203.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output204.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output204.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output204.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output204.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output205.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output205.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output205.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output205.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output206.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output206.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output206.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output206.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output207.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output207.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output207.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output207.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output208.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output208.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output208.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output208.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output209.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output209.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output209.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output209.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output21.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output21.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output21.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output21.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output210.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output210.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output210.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output210.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output211.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output211.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output211.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output211.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output212.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output212.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output212.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output212.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output213.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output213.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output213.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output213.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output214.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output214.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output214.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output214.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output215.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output215.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output215.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output215.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output216.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output216.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output216.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output216.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output217.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output217.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output217.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output217.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output218.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output218.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output218.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output218.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output219.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output219.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output219.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output219.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output22.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output22.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output22.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output22.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output220.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output220.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output220.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output220.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output221.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output221.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output221.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output221.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output222.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output222.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output222.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output222.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output223.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output223.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output223.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output223.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output224.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output224.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output224.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output224.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output225.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output225.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output225.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output225.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output226.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output226.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output226.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output226.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output227.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output227.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output227.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output227.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output228.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output228.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output228.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output228.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output229.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output229.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output229.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output229.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output23.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output23.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output23.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output23.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output230.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output230.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output230.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output230.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output231.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output231.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output231.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output231.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output232.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output232.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output232.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output232.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output233.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output233.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output233.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output233.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output234.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output234.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output234.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output234.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output235.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output235.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output235.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output235.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output236.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output236.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output236.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output236.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output237.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output237.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output237.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output237.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output238.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output238.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output238.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output238.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output239.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output239.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output239.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output239.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output24.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output24.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output24.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output24.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output240.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output240.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output240.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output240.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output241.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output241.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output241.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output241.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output242.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output242.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output242.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output242.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output243.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output243.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output243.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output243.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output244.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output244.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output244.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output244.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output245.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output245.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output245.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output245.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output246.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output246.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output246.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output246.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output247.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output247.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output247.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output247.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output248.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output248.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output248.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output248.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output249.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output249.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output249.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output249.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output25.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output25.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output25.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output25.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output250.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output250.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output250.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output250.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output251.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output251.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output251.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output251.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output252.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output252.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output252.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output252.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output253.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output253.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output253.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output253.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output254.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output254.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output254.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output254.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output255.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output255.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output255.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output255.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output256.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output256.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output256.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output256.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output257.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output257.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output257.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output257.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output258.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output258.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output258.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output258.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output259.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output259.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output259.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output259.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output26.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output26.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output26.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output26.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output260.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output260.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output260.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output260.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output261.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output261.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output261.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output261.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output262.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output262.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output262.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output262.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output263.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output263.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output263.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output263.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output264.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output264.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output264.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output264.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output265.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output265.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output265.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output265.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output266.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output266.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output266.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output266.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output267.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output267.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output267.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output267.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output268.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output268.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output268.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output268.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output269.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output269.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output269.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output269.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output27.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output27.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output27.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output27.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output270.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output270.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output270.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output270.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output271.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output271.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output271.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output271.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output272.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output272.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output272.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output272.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output273.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output273.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output273.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output273.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output274.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output274.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output274.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output274.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output275.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output275.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output275.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output275.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output276.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output276.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output276.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output276.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output277.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output277.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output277.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output277.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output278.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output278.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output278.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output278.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output279.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output279.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output279.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output279.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output28.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output28.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output28.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output28.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output280.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output280.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output280.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output280.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output281.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output281.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output281.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output281.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output282.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output282.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output282.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output282.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output283.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output283.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output283.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output283.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output284.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output284.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output284.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output284.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output285.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output285.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output285.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output285.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output286.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output286.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output286.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output286.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output287.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output287.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output287.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output287.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output288.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output288.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output288.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output288.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output289.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output289.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output289.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output289.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output29.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output29.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output29.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output29.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output290.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output290.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output290.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output290.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output291.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output291.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output291.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output291.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output292.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output292.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output292.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output292.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output293.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output293.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output293.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output293.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output294.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output294.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output294.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output294.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output295.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output295.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output295.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output295.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output296.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output296.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output296.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output296.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output297.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output297.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output297.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output297.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output298.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output298.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output298.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output298.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output299.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output299.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output299.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output299.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output3.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output3.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output30.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output30.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output30.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output30.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output300.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output300.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output300.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output300.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output301.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output301.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output301.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output301.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output302.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output302.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output302.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output302.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output303.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output303.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output303.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output303.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output304.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output304.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output304.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output304.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output305.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output305.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output305.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output305.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output306.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output306.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output306.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output306.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output307.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output307.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output307.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output307.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output308.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output308.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output308.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output308.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output309.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output309.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output309.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output309.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output31.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output31.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output31.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output31.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output310.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output310.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output310.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output310.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output311.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output311.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output311.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output311.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output312.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output312.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output312.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output312.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output313.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output313.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output313.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output313.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output314.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output314.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output314.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output314.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output315.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output315.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output315.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output315.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output316.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output316.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output316.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output316.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output317.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output317.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output317.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output317.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output318.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output318.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output318.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output318.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output319.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output319.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output319.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output319.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output32.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output32.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output32.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output32.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output320.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output320.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output320.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output320.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output321.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output321.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output321.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output321.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output322.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output322.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output322.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output322.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output323.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output323.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output323.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output323.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output324.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output324.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output324.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output324.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output325.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output325.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output325.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output325.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output326.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output326.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output326.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output326.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output327.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output327.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output327.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output327.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output328.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output328.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output328.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output328.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output329.m4a" beforeDir="false" afterPath="$PROJECT_DIR$/out/output329.m4a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output329.m4a.asd" beforeDir="false" afterPath="$PROJECT_DIR$/out/output329.m4a.asd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output329.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output329.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output329.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output329.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output33.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output33.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output33.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output33.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output330.m4a" beforeDir="false" afterPath="$PROJECT_DIR$/out/output330.m4a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output330.m4a.asd" beforeDir="false" afterPath="$PROJECT_DIR$/out/output330.m4a.asd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output330.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output330.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output330.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output330.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output34.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output34.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output34.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output34.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output35.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output35.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output35.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output35.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output36.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output36.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output36.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output36.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output37.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output37.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output37.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output37.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output38.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output38.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output38.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output38.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output39.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output39.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output39.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output39.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output4.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output4.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output40.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output40.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output40.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output40.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output41.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output41.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output41.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output41.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output42.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output42.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output42.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output42.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output43.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output43.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output43.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output43.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output44.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output44.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output44.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output44.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output45.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output45.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output45.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output45.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output46.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output46.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output46.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output46.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output47.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output47.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output47.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output47.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output48.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output48.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output48.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output48.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output49.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output49.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output49.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output49.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output5.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output5.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output50.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output50.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output50.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output50.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output51.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output51.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output51.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output51.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output52.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output52.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output52.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output52.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output53.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output53.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output53.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output53.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output54.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output54.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output54.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output54.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output55.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output55.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output55.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output55.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output56.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output56.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output56.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output56.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output57.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output57.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output57.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output57.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output58.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output58.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output58.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output58.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output59.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output59.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output59.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output59.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output6.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output6.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output60.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output60.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output60.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output60.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output61.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output61.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output61.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output61.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output62.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output62.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output62.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output62.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output63.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output63.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output63.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output63.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output64.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output64.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output64.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output64.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output65.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output65.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output65.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output65.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output66.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output66.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output66.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output66.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output67.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output67.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output67.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output67.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output68.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output68.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output68.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output68.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output69.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output69.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output69.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output69.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output7.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output7.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output70.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output70.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output70.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output70.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output71.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output71.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output71.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output71.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output72.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output72.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output72.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output72.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output73.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output73.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output73.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output73.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output74.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output74.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output74.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output74.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output75.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output75.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output75.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output75.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output76.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output76.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output76.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output76.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output77.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output77.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output77.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output77.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output78.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output78.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output78.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output78.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output79.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output79.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output79.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output79.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output8.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output8.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output80.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output80.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output80.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output80.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output81.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output81.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output81.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output81.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output82.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output82.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output82.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output82.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output83.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output83.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output83.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output83.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output84.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output84.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output84.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output84.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output85.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output85.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output85.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output85.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output86.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output86.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output86.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output86.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output87.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output87.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output87.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output87.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output88.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output88.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output88.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output88.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output89.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output89.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output89.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output89.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output9.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output9.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output90.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output90.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output90.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output90.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output91.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output91.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output91.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output91.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output92.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output92.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output92.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output92.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output93.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output93.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output93.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output93.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output94.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output94.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output94.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output94.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output95.m4a" beforeDir="false" afterPath="$PROJECT_DIR$/out/output95.m4a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output95.m4a.asd" beforeDir="false" afterPath="$PROJECT_DIR$/out/output95.m4a.asd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output95.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output95.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output95.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output95.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output96.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output96.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output96.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output96.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output97.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output97.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output97.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output97.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output98.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output98.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output98.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output98.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output99.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/output99.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/out/output99.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/output99.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/xrbm/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/xrbm/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/xrbm/losses/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/xrbm/losses/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/xrbm/losses/losses.py" beforeDir="false" afterPath="$PROJECT_DIR$/xrbm/losses/losses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/xrbm/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/xrbm/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/xrbm/models/crbm.py" beforeDir="false" afterPath="$PROJECT_DIR$/xrbm/models/crbm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/xrbm/models/rbm.py" beforeDir="false" afterPath="$PROJECT_DIR$/xrbm/models/rbm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/xrbm/train/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/xrbm/train/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/xrbm/train/cdk.py" beforeDir="false" afterPath="$PROJECT_DIR$/xrbm/train/cdk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/xrbm/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/xrbm/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/xrbm/utils/nnviz.py" beforeDir="false" afterPath="$PROJECT_DIR$/xrbm/utils/nnviz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/xrbm/utils/tfutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/xrbm/utils/tfutils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/xrbm/utils/vizutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/xrbm/utils/vizutils.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CRBMFourier.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+              <folding>
+                <element signature="e#15#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../CRBMTest/CRBMTest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="116" column="89" lean-forward="true" selection-start-line="116" selection-start-column="81" selection-end-line="116" selection-end-column="89" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>training_e</find>
+      <find>SEQ_LEN</find>
+      <find>plt</find>
+      <find>gen_init_frame</find>
+      <find>MODEL_NUM</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>model.clip_window</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Simon Demeule" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/xRBMTest.py" />
+        <option value="$PROJECT_DIR$/CRBMSound.py" />
+        <option value="$PROJECT_DIR$/CRBMFourier.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CRBMFourier" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRBMFourier" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRBMFourier" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRBMFourier" type="462c0819:PsiDirectoryNode" />
+              <item name="xrbm" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="CRBMFourier" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="CRBMFourier" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CRBMFourier.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="CRBMFourier" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xRBMTest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.CRBMFourier" />
+        <item itemvalue="Python.CRBMFourier" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dc328358-3971-49e2-beac-597918a93c69" name="Default Changelist" comment="" />
+      <created>1559660010019</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559660010019</updated>
+      <workItem from="1559664989979" duration="1082000" />
+      <workItem from="1559667984011" duration="13859000" />
+      <workItem from="1559838548129" duration="1414000" />
+      <workItem from="1559920275148" duration="632000" />
+      <workItem from="1560269130191" duration="1275000" />
+      <workItem from="1560285757627" duration="1664000" />
+      <workItem from="1560362393995" duration="943000" />
+      <workItem from="1561496208071" duration="277000" />
+      <workItem from="1561577786751" duration="583000" />
+      <workItem from="1561649244751" duration="320000" />
+      <workItem from="1561649676131" duration="1622000" />
+      <workItem from="1561653365882" duration="8954000" />
+      <workItem from="1561666572238" duration="7828000" />
+      <workItem from="1561743656625" duration="18000" />
+      <workItem from="1561743684651" duration="8114000" />
+      <workItem from="1562091352480" duration="8730000" />
+      <workItem from="1562171935468" duration="14624000" />
+      <workItem from="1562283430749" duration="681000" />
+      <workItem from="1562348417379" duration="28836000" />
+      <workItem from="1562457092280" duration="8784000" />
+      <workItem from="1562518155049" duration="9050000" />
+      <workItem from="1562762333142" duration="2070000" />
+      <workItem from="1563307040582" duration="2682000" />
+      <workItem from="1563311611762" duration="103000" />
+      <workItem from="1563312087232" duration="136000" />
+      <workItem from="1563312307462" duration="1078000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added parameter logging and automatic file name increment">
+      <created>1561744589176</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1561744589177</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="125359000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1910867" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3010204" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49935704" weight="0.39591837" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32894737" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32959184" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32894737" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50064296" side_tool="true" weight="0.296875" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" sideWeight="0.498779" visible="true" weight="0.25714287" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4993895" weight="0.32959184" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="370" height="850" id="Documentation" order="3" sideWeight="0.048076924" side_tool="true" weight="0.4010989" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" x="381" y="180" width="1097" height="682" id="SciView" order="5" sideWeight="0.9519231" weight="0.4010989" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added parameter logging and automatic file name increment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added parameter logging and automatic file name increment" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/xRBMTest$xRBMTest.coverage" NAME="xRBMTest Coverage Results" MODIFIED="1561649447952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CRBMSound$CRBMSound.coverage" NAME="CRBMSound Coverage Results" MODIFIED="1562522413349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>np.roots([i * 0.2 for i in range(100)])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>condition_i[0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>multiscale_sum_num_elements(0)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>visible_data[0][0] - condition_data[1][11]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>visible_data[0][0]-condition_data[1][11]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>visible_data[0][0]-condition_data[1][0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>visible_data[0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>condition_data[0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>condition_data[1]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/matplotlib/figure.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="220" selection-start-line="220" selection-end-line="220" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/matplotlib/pyplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1236">
+          <caret line="144" selection-start-line="144" selection-end-line="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/matplotlib/image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6060">
+          <caret line="428" selection-start-line="428" selection-end-line="428" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xRBMTest.py" />
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_bundle/pydev_umd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="196" selection-start-line="196" selection-end-line="196" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Python/2.7/lib/python/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4170">
+          <caret line="291" selection-start-line="291" selection-end-line="291" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Python/2.7/lib/python/site-packages/tensorflow/python/ops/control_flow_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="3088" selection-start-line="3088" selection-end-line="3088" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xrbm/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/pycharm.vmoptions">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17190">
+          <caret line="1146" selection-start-line="1146" selection-end-line="1146" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xrbm/models/crbm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="335" selection-start-line="335" selection-end-line="335" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xrbm/train/cdk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRBMTimeInvariant.py" />
+    <entry file="file://$PROJECT_DIR$/../CRBMTest/CRBMTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="116" column="89" lean-forward="true" selection-start-line="116" selection-start-column="81" selection-end-line="116" selection-end-column="89" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRBMFourier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+          <folding>
+            <element signature="e#15#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
