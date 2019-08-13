@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc328358-3971-49e2-beac-597918a93c69" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../CRBMFourier/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CRBMFourier/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMFourier/CRBMFourier.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CRBMFourier/CRBMFourier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CRBMTest/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRBMTimeInvariant.py" beforeDir="false" afterPath="$PROJECT_DIR$/CRBMTimeInvariant.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,12 +14,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CRBMTimeInvariant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+            <state relative-caret-position="405">
+              <caret line="199" column="49" lean-forward="true" selection-start-line="193" selection-start-column="4" selection-end-line="199" selection-end-column="49" />
               <folding>
                 <element signature="e#15#24#0" expanded="true" />
               </folding>
@@ -28,7 +30,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Library/Python/2.7/lib/python/site-packages/tensorflow/python/client/session.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
+            <state relative-caret-position="20745">
               <caret line="1406" selection-start-line="1406" selection-end-line="1406" />
             </state>
           </provider>
@@ -37,7 +39,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="673">
+            <state relative-caret-position="26355">
               <caret line="1757" selection-start-line="1757" selection-end-line="1757" />
             </state>
           </provider>
@@ -77,6 +79,7 @@
       <list>
         <option value="$PROJECT_DIR$/xRBMTest.py" />
         <option value="$PROJECT_DIR$/CRBMSound.py" />
+        <option value="$PROJECT_DIR$/CRBMFilterTools.py" />
         <option value="$PROJECT_DIR$/CRBMTimeInvariant.py" />
       </list>
     </option>
@@ -93,6 +96,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -109,7 +113,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -142,6 +145,9 @@
       <module name="CRBMTimeInvariant" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -221,7 +227,11 @@
       <workItem from="1563307040582" duration="2682000" />
       <workItem from="1563311611762" duration="103000" />
       <workItem from="1563312238649" duration="51000" />
-      <workItem from="1563469169966" duration="9356000" />
+      <workItem from="1563469169966" duration="10067000" />
+      <workItem from="1563573113643" duration="355000" />
+      <workItem from="1563574295632" duration="381000" />
+      <workItem from="1564675945522" duration="22000" />
+      <workItem from="1565727745007" duration="1135000" />
     </task>
     <task id="LOCAL-00001" summary="Added parameter logging and automatic file name increment">
       <created>1561744589176</created>
@@ -234,7 +244,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133552000" />
+    <option name="totallyTimeSpent" value="136156000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -249,29 +259,29 @@
     <frame x="-414" y="-1440" width="2560" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12311358" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08339953" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32919708" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3010204" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49935704" weight="0.39562044" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49935704" visible="true" weight="0.39562044" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32894737" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32959184" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32894737" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50064296" side_tool="true" weight="0.296875" />
-      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.498779" visible="true" weight="0.4051095" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.498779" weight="0.10218978" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4993895" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" x="0" y="0" width="370" height="850" id="Documentation" order="3" sideWeight="0.049079753" side_tool="true" visible="true" weight="0.4364575" />
+      <window_info anchor="right" x="0" y="0" width="370" height="850" id="Documentation" order="3" sideWeight="0.055555556" side_tool="true" visible="true" weight="0.20889595" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info active="true" anchor="right" x="381" y="180" width="1097" height="682" id="SciView" order="5" sideWeight="0.9509202" visible="true" weight="0.4364575" />
+      <window_info anchor="right" x="381" y="180" width="1097" height="682" id="SciView" order="5" sideWeight="0.9444444" visible="true" weight="0.20889595" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,6 +293,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/CRBMTimeInvariant.py</url>
+          <line>209</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -293,7 +310,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CRBMTimeInvariant$CRBMTimeInvariant.coverage" NAME="CRBMTimeInvariant Coverage Results" MODIFIED="1563485601126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CRBMTimeInvariant$CRBMTimeInvariant.coverage" NAME="CRBMTimeInvariant Coverage Results" MODIFIED="1565727853737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/xRBMTest$xRBMTest.coverage" NAME="xRBMTest Coverage Results" MODIFIED="1561649447952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CRBMSound$CRBMSound.coverage" NAME="CRBMSound Coverage Results" MODIFIED="1562522413349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -414,27 +431,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+    <entry file="file://$PROJECT_DIR$/CRBMFilterTools.py" />
+    <entry file="file://$PROJECT_DIR$/CRBMTimeInvariant.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="1757" selection-start-line="1757" selection-end-line="1757" />
+        <state relative-caret-position="405">
+          <caret line="199" column="49" lean-forward="true" selection-start-line="193" selection-start-column="4" selection-end-line="199" selection-end-column="49" />
+          <folding>
+            <element signature="e#15#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Library/Python/2.7/lib/python/site-packages/tensorflow/python/client/session.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
+        <state relative-caret-position="20745">
           <caret line="1406" selection-start-line="1406" selection-end-line="1406" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CRBMTimeInvariant.py">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding>
-            <element signature="e#15#24#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="26355">
+          <caret line="1757" selection-start-line="1757" selection-end-line="1757" />
         </state>
       </provider>
     </entry>

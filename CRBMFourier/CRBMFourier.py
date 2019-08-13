@@ -4,6 +4,7 @@ import math
 import numpy as np
 import scipy as sp
 import scipy.io.wavfile
+import scipy.signal
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
@@ -18,10 +19,12 @@ model.batch_size = 1000
 model.epochs = 100
 model.gibbs_generate = 2
 model.gibbs_train = 1
-model.input_file = "inputpluck.wav"
+model.input_file = "inputmetal.wav"
 model.learn_rate = 0.01
-model.num_vis = 1024
-model.num_hid = 1024
+model.transform_segment = 512
+model.transform_window = "hann"
+model.num_vis = model.transform_segment + 2
+model.num_hid = 512
 model.num_cond = 3
 
 rate, data = sp.io.wavfile.read("in/" + model.input_file)
@@ -49,28 +52,174 @@ def range_normalized_to_one(activation):
 def range_one_to_normalized(activation):
     return range_data_to_normalized(range_one_to_data(activation))
 
-plt.figure(figsize=(12, 6))
-plt.plot(data)
-plt.title('The Training Sound')
-plt.show()
+def fourier_forward(x):
+    _, _, z = scipy.signal.stft(x, fs = rate, nperseg = model.transform_segment, window = model.transform_window)
+    return z
 
+def fourier_inverse(z):
+    _, x = sp.signal.istft(z, fs = rate, nperseg = model.transform_segment, window = model.transform_window)
+    return x
 
-data_one = [range_data_to_one(d) for d in data]
-data_fourier = []
+def fourier_to_fourier_delta(z):
+    zd = np.empty_like(z)
+    for f in range(z.shape[0]):
+        angle_prev = z[f][0]
+        for t in range(z.shape[1]):
+            angle_current = np.angle(z[f][t])
+            # calculate phase change
+            angle_delta = np.real(angle_current - angle_prev)
+            # cyclical unwrap
+            angle_delta = (angle_delta + np.pi) % (2.0 * np.pi) - np.pi
+            # write new transform values
+            zd[f][t] = np.abs(z[f][t]) * np.exp(-1.0j * angle_delta)
+            angle_prev = angle_current
+    return zd
 
-# TODO get fourier transform going with appropriate offset, windowing, etc
-# TODO also get the reverse operation right for generation
+def fourier_delta_to_fourier(zd, angle_init):
+    z = np.empty_like(zd)
+    for f in range(zd.shape[0]):
+        angle_prev = angle_init[f]
+        for t in range(zd.shape[1]):
+            angle_delta = np.angle(zd[f][t])
+            # apply phase change
+            angle_current = angle_prev + angle_delta
+            # cyclical wrap
+            angle_current = (angle_current + np.pi) % (2.0 * np.pi) - np.pi
+            # write new transform values
+            z[f][t] = np.abs(zd[f][t]) * np.exp(-1.0j * angle_current)
+            angle_prev = angle_current
+    return z
+
+def fourier_to_polar_delta(z):
+    amplitude = np.empty_like(z)
+    angle = np.empty_like(z)
+    for f in range(z.shape[0]):
+        angle_prev = z[f][0]
+        for t in range(z.shape[1]):
+            angle_current = np.angle(z[f][t])
+            # calculate phase change
+            angle_delta = np.real(angle_current - angle_prev)
+            # cyclical unwrap
+            angle_delta = (angle_delta + np.pi) % (2.0 * np.pi) - np.pi
+            # write new transform values
+            amplitude[f][t] = np.abs(z[f][t])
+            angle[f][t] = angle_delta
+            angle_prev = angle_current
+    return amplitude, angle
+
+def polar_delta_to_fourier(amplitude, angle, angle_initial):
+    z = np.empty_like(amplitude)
+    for f in range(amplitude.shape[0]):
+        angle_prev = angle_initial[f]
+        for t in range(amplitude.shape[1]):
+            angle_delta = angle[f][t]
+            # apply phase change
+            angle_current = angle_prev + angle_delta
+            # cyclical wrap
+            angle_current = (angle_current + np.pi) % (2.0 * np.pi) - np.pi
+            # write new transform values
+            z[f][t] = amplitude[f][t] * np.exp(-1.0j * angle_current)
+            angle_prev = angle_current
+    return z
+
+def polar_to_fourier(amplitude, angle):
+    z = np.empty_like(amplitude)
+    for f in range(amplitude.shape[0]):
+        for t in range(amplitude.shape[1]):
+            z[f][t] = amplitude[f][t] * np.exp(-1.0j * angle[f][t])
+    return z
+
+def fourier_to_polar(z):
+    amplitude = np.empty_like(z)
+    angle = np.empty_like(z)
+    for f in range(z.shape[0]):
+        for t in range(z.shape[1]):
+            amplitude[f][t] = np.abs(z[f][t])
+            angle[f][t] = np.angle(z[f][t])
+    return amplitude, angle
+
+def polar_to_activation(amplitude, angle):
+    activation = np.empty((amplitude.shape[1], amplitude.shape[0] * 2))
+    for t in range(amplitude.shape[1]):
+        for f in range(amplitude.shape[0]):
+            activation[t][2 * f] = amplitude[f][t]
+            activation[t][2 * f + 1] = angle[f][t]
+    return activation
+
+def activation_to_polar(activation):
+    amplitude = np.empty((activation.shape[1] / 2, activation.shape[0]))
+    angle = np.empty((activation.shape[1] / 2, activation.shape[0]))
+    for t in range(amplitude.shape[1]):
+        for f in range(amplitude.shape[0]):
+            amplitude[f][t] = activation[t][2 * f]
+            angle[f][t] = activation[t][2 * f + 1]
+    return amplitude, angle
+
+def fourier_to_activation(z):
+    amplitude, angle = fourier_to_polar(z)
+    return polar_to_activation(amplitude, angle)
+
+def activation_to_fourier(activation):
+    amplitude, angle = activation_to_polar(activation)
+    return polar_to_activation(amplitude, angle)
+
+def plot_fourier_amplitude(z):
+    f = np.asarray([rate * 1.0 / model.transform_segment * i for i in range(0, model.transform_segment / 2 + 1)])
+    t = np.asarray([model.transform_segment / 2.0 / rate * i for i in range(z.shape[1])])
+    plt.figure()
+    plt.pcolormesh(t, f, np.abs(z))
+    plt.ylim([f[1], f[-1]])
+    plt.title('STFT Magnitude')
+    plt.ylabel('Frequency [Hz]')
+    plt.xlabel('Time [sec]')
+    plt.yscale('log')
+    plt.colorbar()
+    plt.show()
+
+def plot_fourier_phase(z):
+    f = np.asarray([rate * 1.0 / model.transform_segment * i for i in range(0, model.transform_segment / 2 + 1)])
+    t = np.asarray([model.transform_segment / 2.0 / rate * i for i in range(z.shape[1])])
+    plt.figure()
+    plt.pcolormesh(t, f, np.angle(z))
+    plt.ylim([f[1], f[-1]])
+    plt.title('STFT Phase')
+    plt.ylabel('Frequency [Hz]')
+    plt.xlabel('Time [sec]')
+    plt.yscale('log')
+    plt.colorbar()
+    plt.show()
+
+data_fourier = fourier_forward(data)
+data_fourier_delta = fourier_to_fourier_delta(data_fourier)
+
+plot_fourier_amplitude(data_fourier)
+plot_fourier_phase(data_fourier)
+plot_fourier_phase(data_fourier_delta)
+
+data_activation = fourier_to_activation(data_fourier)
+
+# TODO load data into condition / visible data
+# TODO unload data after generation and compute inverse fft
+# TODO add model param for phase unwrap on / off
 
 # prep training data
+condition_data = np.empty(())
+visible_data = np.empty()
+
+
+
+"""
 condition_data = []
 visible_data = []
 
-for i in range(model.num_cond, len(data_normalized) - 1):
-    condition_data.append(data_normalized[i - model.num_cond: i])
-    visible_data.append([data_normalized[i]])
+
+for i in range(model.num_cond, data_fourier.shape[1] - 1):
+    condition_data.append(data_activation[i - model.num_cond: i])
+    visible_data.append(data_activation[i])
 
 condition_data = np.asarray(condition_data)
 visible_data = np.asarray(visible_data)
+"""
 
 # for a corresponding pair of cond and visible data
 # cond data samples    [t - model.num_cond, t - 1] in this order
