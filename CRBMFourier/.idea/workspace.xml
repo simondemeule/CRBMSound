@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/CRBMFourier.py" beforeDir="false" afterPath="$PROJECT_DIR$/CRBMFourier.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRBMTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CRBMTest/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CRBMTimeInvariant/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CRBMTimeInvariant/CRBMTimeInvariant.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CRBMTimeInvariant/CRBMTimeInvariant.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,11 +19,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CRBMFourier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1646">
-              <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+            <state relative-caret-position="840">
+              <caret line="395" selection-start-line="395" selection-end-line="395" />
               <folding>
                 <element signature="e#15#24#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Library/Python/2.7/lib/python/site-packages/tensorflow/python/client/session.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20745">
+              <caret line="1406" selection-start-line="1406" selection-end-line="1406" />
             </state>
           </provider>
         </entry>
@@ -66,10 +76,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="-414" />
-    <option name="y" value="-1440" />
-    <option name="width" value="2560" />
-    <option name="height" value="1440" />
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -130,6 +138,9 @@
       <module name="CRBMFourier" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -213,7 +224,8 @@
       <workItem from="1564675968172" duration="430000" />
       <workItem from="1565456445713" duration="429000" />
       <workItem from="1565710061991" duration="221000" />
-      <workItem from="1565713211174" duration="13741000" />
+      <workItem from="1565713211174" duration="18540000" />
+      <workItem from="1565979727004" duration="598000" />
     </task>
     <task id="LOCAL-00001" summary="Added parameter logging and automatic file name increment">
       <created>1561744589176</created>
@@ -226,7 +238,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140180000" />
+    <option name="totallyTimeSpent" value="145577000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -238,16 +250,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-414" y="-1440" width="2560" height="1440" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12986498" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.1996337" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32919708" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3010204" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49935704" visible="true" weight="0.39562044" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49935704" weight="0.5112245" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32894737" />
@@ -261,9 +273,9 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" x="0" y="0" width="370" height="850" id="Documentation" order="3" sideWeight="0.35748792" side_tool="true" visible="true" weight="0.40071484" />
+      <window_info anchor="right" x="0" y="0" width="370" height="850" id="Documentation" order="3" sideWeight="0.028571429" side_tool="true" visible="true" weight="0.82173383" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info active="true" anchor="right" x="381" y="180" width="1097" height="682" id="SciView" order="5" sideWeight="0.6425121" visible="true" weight="0.40071484" />
+      <window_info active="true" anchor="right" x="381" y="180" width="1097" height="682" id="SciView" order="5" sideWeight="0.9714286" visible="true" weight="0.82173383" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,8 +290,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/CRBMFourier.py</url>
-          <line>220</line>
-          <option name="timeStamp" value="17" />
+          <line>395</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -292,7 +304,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CRBMFourier$CRBMFourier.coverage" NAME="CRBMFourier Coverage Results" MODIFIED="1565731009611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CRBMFourier$CRBMFourier.coverage" NAME="CRBMFourier Coverage Results" MODIFIED="1565799398041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/xRBMTest$xRBMTest.coverage" NAME="xRBMTest Coverage Results" MODIFIED="1561649447952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CRBMSound$CRBMSound.coverage" NAME="CRBMSound Coverage Results" MODIFIED="1562522413349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -454,11 +466,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CRBMFourier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1646">
-          <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+        <state relative-caret-position="840">
+          <caret line="395" selection-start-line="395" selection-end-line="395" />
           <folding>
             <element signature="e#15#24#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Python/2.7/lib/python/site-packages/tensorflow/python/client/session.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20745">
+          <caret line="1406" selection-start-line="1406" selection-end-line="1406" />
         </state>
       </provider>
     </entry>

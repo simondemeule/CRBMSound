@@ -15,17 +15,17 @@ import xrbm.losses
 class model:
     pass
 
-model.batch_size = 1000
+model.batch_size = 32
 model.epochs = 100
 model.gibbs_generate = 2
 model.gibbs_train = 1
-model.input_file = "inputmetal.wav"
+model.input_file = "inputcello.wav"
 model.learn_rate = 0.01
 model.transform_segment = 512
 model.transform_window = "hann"
 model.num_vis = model.transform_segment + 2
-model.num_hid = 512
-model.num_cond = 3
+model.num_hid = model.transform_segment + 2
+model.num_cond = model.transform_segment + 2
 
 rate, data = sp.io.wavfile.read("in/" + model.input_file)
 
@@ -138,7 +138,7 @@ def fourier_to_polar(z):
             angle[f][t] = np.angle(z[f][t])
     return amplitude, angle
 
-def polar_to_activation(amplitude, angle):
+def polar_to_activation_polar(amplitude, angle):
     activation = np.empty((amplitude.shape[1], amplitude.shape[0] * 2))
     for t in range(amplitude.shape[1]):
         for f in range(amplitude.shape[0]):
@@ -146,7 +146,7 @@ def polar_to_activation(amplitude, angle):
             activation[t][2 * f + 1] = angle[f][t]
     return activation
 
-def activation_to_polar(activation):
+def activation_polar_to_polar(activation):
     amplitude = np.empty((activation.shape[1] / 2, activation.shape[0]))
     angle = np.empty((activation.shape[1] / 2, activation.shape[0]))
     for t in range(amplitude.shape[1]):
@@ -155,13 +155,20 @@ def activation_to_polar(activation):
             angle[f][t] = activation[t][2 * f + 1]
     return amplitude, angle
 
-def fourier_to_activation(z):
-    amplitude, angle = fourier_to_polar(z)
-    return polar_to_activation(amplitude, angle)
+def fourier_to_activation_fourier(z):
+    activation = np.empty((z.shape[1], z.shape[0] * 2))
+    for t in range(z.shape[1]):
+        for f in range(z.shape[0]):
+            activation[t][2 * f] = np.real(z[f][t])
+            activation[t][2 * f + 1] = np.imag(z[f][t])
+    return activation
 
-def activation_to_fourier(activation):
-    amplitude, angle = activation_to_polar(activation)
-    return polar_to_activation(amplitude, angle)
+def activation_fourier_to_fourier(activation):
+    z = np.empty((activation.shape[1] / 2, activation.shape[0]))
+    for t in range(z.shape[1]):
+        for f in range(z.shape[0]):
+            z[f][t] = activation[t][2 * f] + 1.0j * activation[t][2 * f + 1]
+    return z
 
 def plot_fourier_amplitude(z):
     f = np.asarray([rate * 1.0 / model.transform_segment * i for i in range(0, model.transform_segment / 2 + 1)])
@@ -189,24 +196,26 @@ def plot_fourier_phase(z):
     plt.colorbar()
     plt.show()
 
-data_fourier = fourier_forward(data)
+data_fourier = fourier_forward(range_data_to_normalized(data))
 data_fourier_delta = fourier_to_fourier_delta(data_fourier)
 
 plot_fourier_amplitude(data_fourier)
 plot_fourier_phase(data_fourier)
 plot_fourier_phase(data_fourier_delta)
 
-data_activation = fourier_to_activation(data_fourier)
+data_activation = fourier_to_activation_fourier(data_fourier)
 
 # TODO load data into condition / visible data
 # TODO unload data after generation and compute inverse fft
 # TODO add model param for phase unwrap on / off
 
 # prep training data
-condition_data = np.empty(())
-visible_data = np.empty()
+condition_data = np.empty((data_activation.shape[0] - 1, data_activation.shape[1]))
+visible_data = np.empty((data_activation.shape[0] - 1, data_activation.shape[1]))
 
-
+for t in range(visible_data.shape[0]):
+    condition_data[t] = data_activation[t]
+    visible_data[t] = data_activation[t + 1]
 
 """
 condition_data = []
@@ -377,3 +386,11 @@ B = sess.run(crbm.B)
 vbias = sess.run(crbm.vbias)
 hbias = sess.run(crbm.hbias)
 """
+
+W = sess.run(crbm.W)
+A = sess.run(crbm.A)
+B = sess.run(crbm.B)
+vbias = sess.run(crbm.vbias)
+hbias = sess.run(crbm.hbias)
+
+print("done")

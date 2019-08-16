@@ -17,17 +17,47 @@ class model:
 model.batch_size = 1000
 model.clip_enable = True
 model.clip_window = 0.8
-model.epochs = 50
+model.epochs = 30
 model.gibbs_generate = 2
 model.gibbs_train = 1
-model.input_file = "inputmetal.wav"
+model.input_batch_enable = True
+model.input_name = "inputpluck"
 model.learn_rate = 0.01
 model.multiscale_base = 1.15
 model.multiscale_enable = False
 model.num_hid = 50
 model.num_cond = 50
 
-rate, data = sp.io.wavfile.read("in/" + model.input_file)
+"""
+
+def file_to_training_one(filepath):
+
+    # TODO: process file
+
+    return condition_data, visible_data
+
+def training_one_to_normalized(condition_data_one, visible_data_one):
+    condition_data_normalized = np.empty_like(condition_data)
+    visible_data_normalized = np.empty_like(visible_data)
+
+    # TODO: normalize
+
+    condition_normalization_constant = 1
+    visible_normalization_constant = 1
+
+    return condition_data_normalized, visible_data_normalized, condition_normalization_constant, visible_normalization_constant
+
+def training_normalized_to_one(condition_data_normalized, visible_data_normalized, condition_normalization_constant, visible_normalization_constant)
+    condition_data_one = np.empty_like(condition_data_normalized)
+    visible_data_one = np.empty_like(visible_data_normalized)
+
+    # TODO: de-normalize
+
+    return condition_data_one, visible_data_one
+
+"""
+
+rate, data = sp.io.wavfile.read("in/" + model.input_name + ".wav")
 
 data_max_value = 32767
 data_min_value = -32768
