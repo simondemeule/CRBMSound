@@ -15,74 +15,47 @@ class model:
     pass
 
 model.batch_size = 1000
-model.clip_enable = True
+model.clip_enable = False
 model.clip_window = 0.8
 model.epochs = 30
 model.gibbs_generate = 2
 model.gibbs_train = 1
-model.input_batch_enable = True
+model.input_folder_enable = False
 model.input_name = "inputpluck"
 model.learn_rate = 0.01
 model.multiscale_base = 1.15
 model.multiscale_enable = False
-model.num_hid = 50
-model.num_cond = 50
-
-"""
-
-def file_to_training_one(filepath):
-
-    # TODO: process file
-
-    return condition_data, visible_data
-
-def training_one_to_normalized(condition_data_one, visible_data_one):
-    condition_data_normalized = np.empty_like(condition_data)
-    visible_data_normalized = np.empty_like(visible_data)
-
-    # TODO: normalize
-
-    condition_normalization_constant = 1
-    visible_normalization_constant = 1
-
-    return condition_data_normalized, visible_data_normalized, condition_normalization_constant, visible_normalization_constant
-
-def training_normalized_to_one(condition_data_normalized, visible_data_normalized, condition_normalization_constant, visible_normalization_constant)
-    condition_data_one = np.empty_like(condition_data_normalized)
-    visible_data_one = np.empty_like(visible_data_normalized)
-
-    # TODO: de-normalize
-
-    return condition_data_one, visible_data_one
-
-"""
-
-rate, data = sp.io.wavfile.read("in/" + model.input_name + ".wav")
+model.num_hid = 10
+model.num_cond = 10
 
 data_max_value = 32767
 data_min_value = -32768
-data_mean = np.mean(data, axis = 0)
-data_std = np.std(data, axis = 0)
 
-def range_data_to_normalized(activation):
+# range utility function
+
+# TODO: get more intuitive function naming for range changes. Normalisation constants are calculated from the «one» range rather than the «raw» range, but this is not reflected in naming.
+# TODO: fix generation loop for multiscale sampling.
+
+def range_raw_to_normalized(activation, data_mean, data_std):
     return (activation * 1.0 - data_mean) / data_std
 
-def range_normalized_to_data(activation):
+def range_normalized_to_raw(activation, data_mean, data_std):
     return (activation * 1.0) * data_std + data_mean
 
-def range_data_to_one(activation):
+def range_raw_to_one(activation):
     return (activation * 1.0 - data_min_value) * 2.0 / (data_max_value - data_min_value) - 1.0
 
-def range_one_to_data(activation):
+def range_one_to_raw(activation):
     return (activation * 1.0 + 1.0) / 2.0 * (data_max_value - data_min_value) + data_min_value
 
-def range_normalized_to_one(activation):
-    return range_data_to_one(range_normalized_to_data(activation))
+def range_normalized_to_one(activation, data_mean, data_std):
+    return range_raw_to_one(range_normalized_to_raw(activation, data_mean, data_std))
 
-def range_one_to_normalized(activation):
-    return range_data_to_normalized(range_one_to_data(activation))
+def range_one_to_normalized(activation, data_mean, data_std):
+    return range_raw_to_normalized(range_one_to_raw(activation), data_mean, data_std)
 
 # soft clips an input to a range [-1, 1] with a piecewise combination of a sigmoid and a linear region spanning [-window, window]
+
 def softclip(input, window):
     if(-window < input < window):
         return input
@@ -97,20 +70,7 @@ def softclip(input, window):
         else:
             return sigmoid(a * (input + window)) / a - window
 
-plt.figure(figsize=(12, 6))
-plt.plot(data)
-plt.title('The Training Sound')
-plt.show()
-
-
-data_normalized = [range_data_to_normalized(d) for d in data]
-data_normalized_sigmoid = []
-if model.clip_enable:
-    data_normalized_sigmoid = [range_one_to_normalized(softclip(range_normalized_to_one(d), model.clip_window)) for d in data_normalized]
-
-# prep training data
-condition_data = []
-visible_data = []
+# multiscale sampling utility functions
 
 # sizes of n = 0, 1, 2 with base 2
 #
@@ -131,6 +91,8 @@ def multiscale_size(n):
 # 1 |       X
 # 2 |               X
 
+
+# pre-computed offset values
 multiscale_offset_computed = [0]
 
 def multiscale_offset(n):
@@ -191,46 +153,116 @@ if model.multiscale_enable:
     for i in range(model.num_cond):
         print("unit %i\tsize %i\toffset %i" % (i, multiscale_size(i), multiscale_offset(i)))
 
-# compute visible and conditional unit activations for each timestep for training
-if model.multiscale_enable:
-    # using multiscale sampling
-    condition_i_last = []
-    for i in range(multiscale_size_total() + 1, len(data_normalized)):
-        condition_i = []
-        if len(condition_i_last) == 0:
-            # compute first set of multiscale samples
-            for n in range(model.num_cond):
-                sum_n = 0
-                for k in multiscale_range_reverse_from(n, i):
-                    # apply softclip if needed
-                    if model.clip_enable:
-                        sum_n = sum_n + data_normalized_sigmoid[k]
-                    else:
-                        sum_n = sum_n + data_normalized[k]
-                sum_n = sum_n / multiscale_size(n)
-                condition_i.append(sum_n)
-        else:
-            # compute later sets with regards to the previous samples
-            for n in range(model.num_cond):
-                if model.clip_enable:
-                    condition_i.append(condition_i_last[n] + (data_normalized_sigmoid[multiscale_leading_reverse_from(n, i)] - data_normalized_sigmoid[multiscale_lagging_reverse_from(n, i)]) / multiscale_size(n))
-                else:
-                    condition_i.append(condition_i_last[n] + (data_normalized[multiscale_leading_reverse_from(n, i)] - data_normalized[multiscale_lagging_reverse_from(n, i)]) / multiscale_size(n))
-        condition_i_last = condition_i
-        condition_data.append(condition_i)
-        visible_data.append([data_normalized[i]])
-else:
-    # using standard sampling
-    for i in range(model.num_cond, len(data_normalized) - 1):
-        # apply softclip if needed
-        if model.clip_enable:
-            condition_data.append(data_normalized_sigmoid[i - model.num_cond: i])
-        else:
-            condition_data.append(data_normalized[i - model.num_cond: i])
-        visible_data.append([data_normalized[i]])
+def file_to_training_one(filename):
 
-condition_data = np.asarray(condition_data)
-visible_data = np.asarray(visible_data)
+    rate, data = sp.io.wavfile.read("in/" + filename + ".wav")
+
+    data_one = [range_raw_to_one(d) for d in data]
+    data_one_sigmoid = []
+    if model.clip_enable:
+        data_one_sigmoid = [softclip(d, model.clip_window) for d in data_one]
+
+    condition_data_one = []
+    visible_data_one = []
+
+    # compute visible and conditional unit activations for each timestep for training
+    if model.multiscale_enable:
+        # using multiscale sampling
+        condition_i_last = []
+        for i in range(multiscale_size_total() + 1, len(data_one)):
+            condition_i = []
+            if len(condition_i_last) == 0:
+                # compute first set of multiscale samples
+                for n in range(model.num_cond):
+                    sum_n = 0
+                    for k in multiscale_range_reverse_from(n, i):
+                        # apply softclip if needed
+                        if model.clip_enable:
+                            sum_n = sum_n + data_one_sigmoid[k]
+                        else:
+                            sum_n = sum_n + data_one[k]
+                    sum_n = sum_n / multiscale_size(n)
+                    condition_i.append(sum_n)
+            else:
+                # compute later sets with regards to the previous samples
+                for n in range(model.num_cond):
+                    if model.clip_enable:
+                        condition_i.append(condition_i_last[n] + (data_one_sigmoid[multiscale_leading_reverse_from(n, i)] - data_one_sigmoid[multiscale_lagging_reverse_from(n, i)]) / multiscale_size(n))
+                    else:
+                        condition_i.append(condition_i_last[n] + (data_one[multiscale_leading_reverse_from(n, i)] - data_one[multiscale_lagging_reverse_from(n, i)]) / multiscale_size(n))
+            condition_i_last = condition_i
+            condition_data_one.append(condition_i)
+            visible_data_one.append([data_one[i]])
+    else:
+        # using standard sampling
+        for i in range(model.num_cond, len(data_one) - 1):
+            # apply softclip if needed
+            if model.clip_enable:
+                condition_data_one.append(data_one_sigmoid[i - model.num_cond: i])
+            else:
+                condition_data_one.append(data_one[i - model.num_cond: i])
+            visible_data_one.append([data_one[i]])
+
+    condition_data_one = np.asarray(condition_data_one)
+    visible_data_one = np.asarray(visible_data_one)
+
+    return np.asarray(condition_data_one), np.asarray(visible_data_one), rate
+
+
+def folder_to_training_one(foldername):
+
+    condition_data_one = None
+    visible_data_one = None
+
+    rate_folder = 0;
+    i = 0
+    while os.path.exists("in/" + foldername + "/" + foldername + "%s.wav" % i):
+        condition_data_one_new, visible_data_one_new, rate_file = file_to_training_one(foldername + "/" + foldername + "%s" % i)
+        if i == 0:
+            rate_folder = rate_file
+            condition_data_one = condition_data_one_new
+            visible_data_one = visible_data_one_new
+        else :
+            assert rate_folder == rate_file, "Training data uses multiple sample rates"
+            condition_data_one = np.append(condition_data_one, condition_data_one_new, axis = 0)
+            visible_data_one = np.append(visible_data_one, visible_data_one_new, axis = 0)
+        i += 1
+    assert i != 0, "Folder contains no properly formed files. Files should be found at in/<model.input_name>/<model.input_name><n>.wav, where n ranges from 0 upwards."
+
+    return condition_data_one, visible_data_one, rate_folder
+
+def visible_data_one_to_normalization_constants(visible_data_one):
+    data_mean = np.mean(visible_data_one, axis = 0)
+    data_std = np.std(visible_data_one, axis = 0)
+    return data_mean, data_std
+
+#c_d_1, v_d_1, r = folder_to_training_one("bellssameleft")
+
+#rate, data = sp.io.wavfile.read("in/" + model.input_name + ".wav")
+
+#plt.figure(figsize=(12, 6))
+#plt.plot(data)
+#plt.title('The Training Sound')
+#plt.show()
+
+
+# prep training data
+condition_data_one = None
+visible_data_one = None
+rate = None
+
+# process files to training data
+
+if model.input_folder_enable:
+    condition_data_one, visible_data_one, rate = folder_to_training_one(model.input_name)
+else:
+    condition_data_one, visible_data_one, rate = file_to_training_one(model.input_name)
+
+# normalize
+data_mean, data_std = visible_data_one_to_normalization_constants(visible_data_one)
+
+visible_data_normalized = range_raw_to_normalized(visible_data_one, data_mean, data_std)
+condition_data_normalized = range_raw_to_normalized(condition_data_one, data_mean, data_std)
 
 # for a corresponding pair of cond and visible data
 # cond data samples    [t - model.num_cond, t - 1] in this order
@@ -248,7 +280,7 @@ crbm = xrbm.models.CRBM(num_vis = 1,
                         name='crbm')
 
 # create mini-batches
-batch_indexes = np.random.permutation(range(len(visible_data)))
+batch_indexes = np.random.permutation(range(len(visible_data_normalized)))
 batch_number  = len(batch_indexes) // model.batch_size
 
 # create placeholder
@@ -281,8 +313,8 @@ for epoch in range(model.epochs):
         # Get just minibatch amount of data
         indexes_i = batch_indexes[batch_i * model.batch_size:(batch_i + 1) * model.batch_size]
 
-        feed = {batch_visible_data: visible_data[indexes_i],
-                batch_condition_data: condition_data[indexes_i],
+        feed = {batch_visible_data: visible_data_normalized[indexes_i],
+                batch_condition_data: condition_data_normalized[indexes_i],
                 momentum: epoch_momentum}
 
         # Run the training step
@@ -321,7 +353,7 @@ def generate(crbm, gen_init_frame = 0, num_gen = model.num_cond):
         for i in range(multiscale_size_total(), num_gen + multiscale_size_total()):
             if len(initcond_last) == 0:
                 # first initialization for conditional units
-                initcond = np.asarray(condition_data[gen_init_frame - multiscale_size_total()])
+                initcond = np.asarray(condition_data_normalized[gen_init_frame - multiscale_size_total()])
                 initcond_last = initcond
 
                 # first initialization for visible unit (copy of previous value)
@@ -343,7 +375,7 @@ def generate(crbm, gen_init_frame = 0, num_gen = model.num_cond):
             s, h = sess.run(gen_op, feed_dict=feed)
 
             if model.clip_enable:
-                s[0] = range_one_to_normalized(softclip(range_normalized_to_one(s[0]), model.clip_window))
+                s[0] = range_one_to_normalized(softclip(range_normalized_to_one(s[0], data_mean, data_std), model.clip_window), data_mean, data_std)
 
             gen_sample.append(s)
             gen_hidden.append(h)
@@ -356,7 +388,7 @@ def generate(crbm, gen_init_frame = 0, num_gen = model.num_cond):
 
         # initialization for visible units
         for i in range(model.num_cond):
-            gen_sample.append(np.reshape(visible_data[gen_init_frame + i], [1, 1]))
+            gen_sample.append(np.reshape(visible_data_normalized[gen_init_frame + i], [1, 1]))
 
         for i in range(num_gen):
             # initialization for conditional units
@@ -372,7 +404,7 @@ def generate(crbm, gen_init_frame = 0, num_gen = model.num_cond):
             s, h = sess.run(gen_op, feed_dict=feed)
 
             if model.clip_enable:
-                s[0] = range_one_to_normalized(softclip(range_normalized_to_one(s[0]), model.clip_window))
+                s[0] = range_one_to_normalized(softclip(range_normalized_to_one(s[0], data_mean, data_std), model.clip_window), data_mean, data_std)
 
             gen_sample.append(s)
             gen_hidden.append(h)
@@ -380,7 +412,7 @@ def generate(crbm, gen_init_frame = 0, num_gen = model.num_cond):
         gen_sample = np.reshape(np.asarray(gen_sample), [num_gen + model.num_cond, 1])
         gen_hidden = np.reshape(np.asarray(gen_hidden), [num_gen, model.num_hid])
 
-    gen_sample = range_normalized_to_data(gen_sample)
+    gen_sample = range_normalized_to_raw(gen_sample, data_mean, data_std)
 
     print("Generation successful")
 
@@ -397,10 +429,10 @@ def generate_to_file(num_gen, gen_init_frame = 0):
     # TODO: double check the proper range of values is being sent to file
 
     # get proper data range
-    data_out = [max(min(range_data_to_one(s[0]), 1.0), -1.0) for s in gen_sample[0:num_gen]]
+    data_out = [max(min(range_raw_to_one(s[0]), 1.0), -1.0) for s in gen_sample[0:num_gen]]
     data_out = np.asarray(data_out)
 
-    # find next avaliable file number
+    # find next available file number
     i = 0
     while os.path.exists("out/output%s.wav" % i) or os.path.exists("output%s.txt" % i):
         i += 1
