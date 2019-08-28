@@ -1,0 +1,14 @@
+batch_size: 1000
+clip_enable: True
+clip_window: 0.8
+epochs: 200
+gibbs_generate: 2
+gibbs_train: 1
+input_folder_enable: True
+input_name: bellssameleftsubset
+learn_rate: 0.01
+meta: original
+multiscale_base: 1.17
+multiscale_enable: True
+num_cond: 40
+num_hid: 40

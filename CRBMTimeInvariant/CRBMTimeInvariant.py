@@ -15,32 +15,29 @@ class model:
     pass
 
 model.batch_size = 1000
-model.clip_enable = False
-model.clip_window = 0.8
-model.epochs = 30
+model.clip_enable = True
+model.clip_window = 0.85
+model.epochs = 100
 model.gibbs_generate = 2
 model.gibbs_train = 1
-model.input_folder_enable = False
-model.input_name = "inputpluck"
+model.input_folder_enable = True
+model.input_name = "drumsamekick"
 model.learn_rate = 0.01
-model.multiscale_base = 1.15
+model.multiscale_base = 1.17
 model.multiscale_enable = False
-model.num_hid = 10
-model.num_cond = 10
+model.num_hid = 20
+model.num_cond = 20
 
 data_max_value = 32767
 data_min_value = -32768
 
-# range utility function
+# range utility functions
 
-# TODO: get more intuitive function naming for range changes. Normalisation constants are calculated from the «one» range rather than the «raw» range, but this is not reflected in naming.
-# TODO: fix generation loop for multiscale sampling.
+def range_one_to_normalized(activation, data_mean_one, data_std_one):
+    return (activation * 1.0 - data_mean_one) / data_std_one
 
-def range_raw_to_normalized(activation, data_mean, data_std):
-    return (activation * 1.0 - data_mean) / data_std
-
-def range_normalized_to_raw(activation, data_mean, data_std):
-    return (activation * 1.0) * data_std + data_mean
+def range_normalized_to_one(activation, data_mean_one, data_std_one):
+    return (activation * 1.0) * data_std_one + data_mean_one
 
 def range_raw_to_one(activation):
     return (activation * 1.0 - data_min_value) * 2.0 / (data_max_value - data_min_value) - 1.0
@@ -48,11 +45,13 @@ def range_raw_to_one(activation):
 def range_one_to_raw(activation):
     return (activation * 1.0 + 1.0) / 2.0 * (data_max_value - data_min_value) + data_min_value
 
-def range_normalized_to_one(activation, data_mean, data_std):
+"""
+def range_normalized_to_one_old(activation, data_mean, data_std):
     return range_raw_to_one(range_normalized_to_raw(activation, data_mean, data_std))
 
-def range_one_to_normalized(activation, data_mean, data_std):
+def range_one_to_normalized_old(activation, data_mean, data_std):
     return range_raw_to_normalized(range_one_to_raw(activation), data_mean, data_std)
+"""
 
 # soft clips an input to a range [-1, 1] with a piecewise combination of a sigmoid and a linear region spanning [-window, window]
 
@@ -206,30 +205,38 @@ def file_to_training_one(filename):
     condition_data_one = np.asarray(condition_data_one)
     visible_data_one = np.asarray(visible_data_one)
 
-    return np.asarray(condition_data_one), np.asarray(visible_data_one), rate
+    print("Processed file in/" + filename + ".wav")
+
+    return np.asarray(condition_data_one), np.asarray(visible_data_one), data_one, data_one_sigmoid, rate
 
 
 def folder_to_training_one(foldername):
 
     condition_data_one = None
     visible_data_one = None
+    data_one = []
+    data_one_sigmoid = []
 
-    rate_folder = 0;
+    rate = 0;
     i = 0
     while os.path.exists("in/" + foldername + "/" + foldername + "%s.wav" % i):
-        condition_data_one_new, visible_data_one_new, rate_file = file_to_training_one(foldername + "/" + foldername + "%s" % i)
+        condition_data_one_new, visible_data_one_new, data_one_new, data_one_sigmoid_new, rate_new = file_to_training_one(foldername + "/" + foldername + "%s" % i)
         if i == 0:
-            rate_folder = rate_file
             condition_data_one = condition_data_one_new
             visible_data_one = visible_data_one_new
+            data_one = data_one_new
+            data_one_sigmoid = data_one_new
+            rate = rate_new
         else :
-            assert rate_folder == rate_file, "Training data uses multiple sample rates"
+            assert rate == rate_new, "Training data uses multiple sample rates"
             condition_data_one = np.append(condition_data_one, condition_data_one_new, axis = 0)
             visible_data_one = np.append(visible_data_one, visible_data_one_new, axis = 0)
+            data_one.extend(data_one_new)
+            data_one_sigmoid.extend(data_one_sigmoid_new)
         i += 1
     assert i != 0, "Folder contains no properly formed files. Files should be found at in/<model.input_name>/<model.input_name><n>.wav, where n ranges from 0 upwards."
 
-    return condition_data_one, visible_data_one, rate_folder
+    return condition_data_one, visible_data_one, data_one, data_one_sigmoid, rate
 
 def visible_data_one_to_normalization_constants(visible_data_one):
     data_mean = np.mean(visible_data_one, axis = 0)
@@ -249,20 +256,29 @@ def visible_data_one_to_normalization_constants(visible_data_one):
 # prep training data
 condition_data_one = None
 visible_data_one = None
+data_one = None
+data_one_sigmoid = None
 rate = None
 
 # process files to training data
 
 if model.input_folder_enable:
-    condition_data_one, visible_data_one, rate = folder_to_training_one(model.input_name)
+    condition_data_one, visible_data_one, data_one, data_one_sigmoid, rate = folder_to_training_one(model.input_name)
 else:
-    condition_data_one, visible_data_one, rate = file_to_training_one(model.input_name)
+    condition_data_one, visible_data_one, data_one, data_one_sigmoid, rate = file_to_training_one(model.input_name)
 
 # normalize
-data_mean, data_std = visible_data_one_to_normalization_constants(visible_data_one)
+data_one_mean, data_one_std = visible_data_one_to_normalization_constants(visible_data_one)
 
-visible_data_normalized = range_raw_to_normalized(visible_data_one, data_mean, data_std)
-condition_data_normalized = range_raw_to_normalized(condition_data_one, data_mean, data_std)
+visible_data_normalized = range_one_to_normalized(visible_data_one, data_one_mean, data_one_std)
+condition_data_normalized = range_one_to_normalized(condition_data_one, data_one_mean, data_one_std)
+
+data_normalized = None
+data_normalized_sigmoid = None
+
+if model.multiscale_enable:
+    data_normalized = [range_one_to_normalized(d, data_one_mean, data_one_std) for d in data_one]
+    data_normalized_sigmoid = [range_one_to_normalized(d, data_one_mean, data_one_std) for d in data_one_sigmoid]
 
 # for a corresponding pair of cond and visible data
 # cond data samples    [t - model.num_cond, t - 1] in this order
@@ -375,7 +391,7 @@ def generate(crbm, gen_init_frame = 0, num_gen = model.num_cond):
             s, h = sess.run(gen_op, feed_dict=feed)
 
             if model.clip_enable:
-                s[0] = range_one_to_normalized(softclip(range_normalized_to_one(s[0], data_mean, data_std), model.clip_window), data_mean, data_std)
+                s[0] = range_one_to_normalized(softclip(range_normalized_to_one(s[0], data_one_mean, data_one_std), model.clip_window), data_one_mean, data_one_std)
 
             gen_sample.append(s)
             gen_hidden.append(h)
@@ -404,7 +420,7 @@ def generate(crbm, gen_init_frame = 0, num_gen = model.num_cond):
             s, h = sess.run(gen_op, feed_dict=feed)
 
             if model.clip_enable:
-                s[0] = range_one_to_normalized(softclip(range_normalized_to_one(s[0], data_mean, data_std), model.clip_window), data_mean, data_std)
+                s[0] = range_one_to_normalized(softclip(range_normalized_to_one(s[0], data_one_mean, data_one_std), model.clip_window), data_one_mean, data_one_std)
 
             gen_sample.append(s)
             gen_hidden.append(h)
@@ -412,7 +428,7 @@ def generate(crbm, gen_init_frame = 0, num_gen = model.num_cond):
         gen_sample = np.reshape(np.asarray(gen_sample), [num_gen + model.num_cond, 1])
         gen_hidden = np.reshape(np.asarray(gen_hidden), [num_gen, model.num_hid])
 
-    gen_sample = range_normalized_to_raw(gen_sample, data_mean, data_std)
+    gen_sample = range_normalized_to_one(gen_sample, data_one_mean, data_one_std)
 
     print("Generation successful")
 
@@ -429,7 +445,7 @@ def generate_to_file(num_gen, gen_init_frame = 0):
     # TODO: double check the proper range of values is being sent to file
 
     # get proper data range
-    data_out = [max(min(range_raw_to_one(s[0]), 1.0), -1.0) for s in gen_sample[0:num_gen]]
+    data_out = [max(min(range_normalized_to_one(s[0], data_one_mean, data_one_std), 1.0), -1.0) for s in gen_sample[0:num_gen]]
     data_out = np.asarray(data_out)
 
     # find next available file number

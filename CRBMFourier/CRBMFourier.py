@@ -205,7 +205,8 @@ plot_fourier_phase(data_fourier_delta)
 
 data_activation = fourier_to_activation_fourier(data_fourier)
 
-# TODO load data into condition / visible data
+# TODO multiple file input
+# TODO code for model order > 1
 # TODO unload data after generation and compute inverse fft
 # TODO add model param for phase unwrap on / off
 
