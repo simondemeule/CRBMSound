@@ -1,0 +1,15 @@
+batch_size: 1000
+clip_enable: True
+clip_window: 0.85
+epochs: 30
+gibbs_generate: 2
+gibbs_train: 1
+input_folder_enable: False
+input_name: inputbass
+learn_rate: 0.01
+meta: original
+multiscale_base: 1.17
+multiscale_enable: False
+num_cond: 20
+num_hid: 20
+pole_clamp: False

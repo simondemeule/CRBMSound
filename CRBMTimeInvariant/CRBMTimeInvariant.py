@@ -16,17 +16,18 @@ class model:
 
 model.batch_size = 1000
 model.clip_enable = True
-model.clip_window = 0.85
-model.epochs = 100
+model.clip_window = 0.9
+model.epochs = 30
 model.gibbs_generate = 2
 model.gibbs_train = 1
 model.input_folder_enable = True
-model.input_name = "drumsamekick"
+model.input_name = "bellssameleftsubset"
 model.learn_rate = 0.01
 model.multiscale_base = 1.17
 model.multiscale_enable = False
-model.num_hid = 20
-model.num_cond = 20
+model.num_hid = 200
+model.num_cond = 50
+model.pole_clamp = True
 
 data_max_value = 32767
 data_min_value = -32768
@@ -318,161 +319,6 @@ xentropy_rec_cost  = xrbm.losses.cross_entropy(batch_visible_data, reconstructed
 sess = tf.Session()
 sess.run(tf.global_variables_initializer())
 
-for epoch in range(model.epochs):
-
-    if epoch < 5: # for the first 5 epochs, we use a momentum coeficient of 0
-        epoch_momentum = 0
-    else: # once the training is stablized, we use a momentum coeficient of 0.9
-        epoch_momentum = 0.9
-
-    for batch_i in range(batch_number):
-        # Get just minibatch amount of data
-        indexes_i = batch_indexes[batch_i * model.batch_size:(batch_i + 1) * model.batch_size]
-
-        feed = {batch_visible_data: visible_data_normalized[indexes_i],
-                batch_condition_data: condition_data_normalized[indexes_i],
-                momentum: epoch_momentum}
-
-        # Run the training step
-        sess.run(train_op, feed_dict=feed)
-        # print("Batch %i / %i" % (batch_i + 1, batch_number))
-
-    reconstruction_cost = sess.run(xentropy_rec_cost, feed_dict = feed)
-
-
-    print('Epoch %i / %i | Reconstruction Cost = %f' %
-          (epoch + 1, model.epochs, reconstruction_cost))
-
-# define generator
-def generate(crbm, gen_init_frame = 0, num_gen = model.num_cond):
-    print('Generating %d frames: ' % (num_gen))
-
-    gen_sample = []
-    gen_hidden = []
-    initcond = []
-    initcond_last = []
-
-    gen_cond = tf.placeholder(tf.float32, shape = [1, model.num_cond], name = 'gen_cond_data')
-    gen_init = tf.placeholder(tf.float32, shape = [1, 1], name = 'gen_init_data')
-    gen_op = crbm.predict(gen_cond, gen_init, model.gibbs_generate)
-    if model.multiscale_enable:
-        # using multiscale sampling
-        gen_init_frame += multiscale_size_total()
-
-        # first initialization for samples
-        for i in multiscale_range_reverse_from_total(gen_init_frame):
-            if model.clip_enable:
-                gen_sample.append(np.reshape(data_normalized_sigmoid[i], [1, 1]))
-            else:
-                gen_sample.append(np.reshape(data_normalized[i], [1, 1]))
-
-        for i in range(multiscale_size_total(), num_gen + multiscale_size_total()):
-            if len(initcond_last) == 0:
-                # first initialization for conditional units
-                initcond = np.asarray(condition_data_normalized[gen_init_frame - multiscale_size_total()])
-                initcond_last = initcond
-
-                # first initialization for visible unit (copy of previous value)
-                initframes = gen_sample[len(gen_sample) - 1]
-            else:
-                # recursive initialization for conditional units
-                initcond = [];
-                for n in range(model.num_cond):
-                    initcond.append(initcond_last[n] + (gen_sample[multiscale_leading_reverse_from(n, i)] - gen_sample[multiscale_lagging_reverse_from(n, i)]) / multiscale_size(n))
-                initcond_last = initcond
-
-                # recursive initialization for visible unit (copy of previous value)
-                initframes = gen_sample[len(gen_sample) - 1]
-
-            # run prediction
-            feed = {gen_cond: np.reshape(initcond, [1, model.num_cond]).astype(np.float32),
-                    gen_init: initframes}
-
-            s, h = sess.run(gen_op, feed_dict=feed)
-
-            if model.clip_enable:
-                s[0] = range_one_to_normalized(softclip(range_normalized_to_one(s[0], data_one_mean, data_one_std), model.clip_window), data_one_mean, data_one_std)
-
-            gen_sample.append(s)
-            gen_hidden.append(h)
-
-        gen_sample = gen_sample[multiscale_size_total():]
-        gen_sample = np.reshape(np.asarray(gen_sample), [num_gen, 1])
-        gen_hidden = np.reshape(np.asarray(gen_hidden), [num_gen, model.num_hid])
-    else:
-        # using standard sampling
-
-        # initialization for visible units
-        for i in range(model.num_cond):
-            gen_sample.append(np.reshape(visible_data_normalized[gen_init_frame + i], [1, 1]))
-
-        for i in range(num_gen):
-            # initialization for conditional units
-            initcond = np.asarray([gen_sample[s] for s in range(i, i + model.num_cond)])
-
-            # initialization for visible units
-            initframes = gen_sample[i + model.num_cond - 1]
-
-            # run prediction
-            feed = {gen_cond: np.reshape(initcond, [1, model.num_cond]).astype(np.float32),
-                    gen_init: initframes}
-
-            s, h = sess.run(gen_op, feed_dict=feed)
-
-            if model.clip_enable:
-                s[0] = range_one_to_normalized(softclip(range_normalized_to_one(s[0], data_one_mean, data_one_std), model.clip_window), data_one_mean, data_one_std)
-
-            gen_sample.append(s)
-            gen_hidden.append(h)
-
-        gen_sample = np.reshape(np.asarray(gen_sample), [num_gen + model.num_cond, 1])
-        gen_hidden = np.reshape(np.asarray(gen_hidden), [num_gen, model.num_hid])
-
-    gen_sample = range_normalized_to_one(gen_sample, data_one_mean, data_one_std)
-
-    print("Generation successful")
-
-    return gen_sample, gen_hidden
-
-def generate_to_file(num_gen, gen_init_frame = 0):
-    gen_sample, gen_hidden = generate(crbm, gen_init_frame = gen_init_frame, num_gen = num_gen)
-
-    plt.figure(figsize=(12, 6))
-    plt.plot(gen_sample)
-    plt.title('The Generated Timeseries')
-    plt.show()
-
-    # TODO: double check the proper range of values is being sent to file
-
-    # get proper data range
-    data_out = [max(min(range_normalized_to_one(s[0], data_one_mean, data_one_std), 1.0), -1.0) for s in gen_sample[0:num_gen]]
-    data_out = np.asarray(data_out)
-
-    # find next available file number
-    i = 0
-    while os.path.exists("out/output%s.wav" % i) or os.path.exists("output%s.txt" % i):
-        i += 1
-
-    # write wav file
-    sp.io.wavfile.write("out/output%s.wav" % i, rate, data_out)
-
-    # write txt file
-    text_out = open("out/output%s.txt" % i, "w")
-    text_out.write('\n'.join("%s: %s" % item for item in sorted(vars(model).items()) if not item[0].startswith('__')))
-    text_out.close()
-
-    print("Successfully created files with index %s" % i)
-
-    plt.figure(figsize=(12, 6))
-    plt.imshow(gen_hidden.T, cmap='gray', interpolation='nearest', aspect='auto')
-    plt.title('Hidden Units Activities')
-    plt.show()
-
-    plt.figure(figsize=(12, 6))
-    plt.plot(data_out)
-    plt.title('The Output Timeseries')
-    plt.show()
-
 def a_to_polynomial(a):
     """
     if i = 0
@@ -704,6 +550,171 @@ def plot_two_polynomial(a_as_polynomial, s_as_polynomial):
     plt.plot(freq, s_response, 'b')
     plt.xlim(- np.pi, np.pi)
     plt.ylim(-40, 40)
+    plt.show()
+
+for epoch in range(model.epochs):
+
+    if epoch < 5: # for the first 5 epochs, we use a momentum coeficient of 0
+        epoch_momentum = 0
+    else: # once the training is stablized, we use a momentum coeficient of 0.9
+        epoch_momentum = 0.9
+
+    for batch_i in range(batch_number):
+        # Get just minibatch amount of data
+        indexes_i = batch_indexes[batch_i * model.batch_size:(batch_i + 1) * model.batch_size]
+
+        feed = {batch_visible_data: visible_data_normalized[indexes_i],
+                batch_condition_data: condition_data_normalized[indexes_i],
+                momentum: epoch_momentum}
+
+        # Run the training step
+        sess.run(train_op, feed_dict=feed)
+        # print("Batch %i / %i" % (batch_i + 1, batch_number))
+
+    if model.pole_clamp and not model.multiscale_enable:
+        A = sess.run(crbm.A)
+        #B = sess.run(crbm.B)
+        #W = sess.run(crbm.W)
+        A_as_poles = a_to_poles(A)
+        A_as_poles = poles_norm_clamp(A_as_poles, 0.001)
+        A = a_from_poles(A_as_poles)
+        #plot_all_poles(A, B, W)
+        sess.run(tf.assign(crbm.A, A))
+
+    reconstruction_cost = sess.run(xentropy_rec_cost, feed_dict = feed)
+
+
+    print('Epoch %i / %i | Reconstruction Cost = %f' %
+          (epoch + 1, model.epochs, reconstruction_cost))
+
+# define generator
+def generate(crbm, gen_init_frame = 0, num_gen = model.num_cond):
+    print('Generating %d frames: ' % (num_gen))
+
+    gen_sample = []
+    gen_hidden = []
+    initcond = []
+    initcond_last = []
+
+    gen_cond = tf.placeholder(tf.float32, shape = [1, model.num_cond], name = 'gen_cond_data')
+    gen_init = tf.placeholder(tf.float32, shape = [1, 1], name = 'gen_init_data')
+    gen_op = crbm.predict(gen_cond, gen_init, model.gibbs_generate)
+    if model.multiscale_enable:
+        # using multiscale sampling
+        gen_init_frame += multiscale_size_total()
+
+        # first initialization for samples
+        for i in multiscale_range_reverse_from_total(gen_init_frame):
+            if model.clip_enable:
+                gen_sample.append(np.reshape(data_normalized_sigmoid[i], [1, 1]))
+            else:
+                gen_sample.append(np.reshape(data_normalized[i], [1, 1]))
+
+        for i in range(multiscale_size_total(), num_gen + multiscale_size_total()):
+            if len(initcond_last) == 0:
+                # first initialization for conditional units
+                initcond = np.asarray(condition_data_normalized[gen_init_frame - multiscale_size_total()])
+                initcond_last = initcond
+
+                # first initialization for visible unit (copy of previous value)
+                initframes = gen_sample[len(gen_sample) - 1]
+            else:
+                # recursive initialization for conditional units
+                initcond = [];
+                for n in range(model.num_cond):
+                    initcond.append(initcond_last[n] + (gen_sample[multiscale_leading_reverse_from(n, i)] - gen_sample[multiscale_lagging_reverse_from(n, i)]) / multiscale_size(n))
+                initcond_last = initcond
+
+                # recursive initialization for visible unit (copy of previous value)
+                initframes = gen_sample[len(gen_sample) - 1]
+
+            # run prediction
+            feed = {gen_cond: np.reshape(initcond, [1, model.num_cond]).astype(np.float32),
+                    gen_init: initframes}
+
+            s, h = sess.run(gen_op, feed_dict=feed)
+
+            if model.clip_enable:
+                s[0] = range_one_to_normalized(softclip(range_normalized_to_one(s[0], data_one_mean, data_one_std), model.clip_window), data_one_mean, data_one_std)
+
+            gen_sample.append(s)
+            gen_hidden.append(h)
+
+        gen_sample = gen_sample[multiscale_size_total():]
+        gen_sample = np.reshape(np.asarray(gen_sample), [num_gen, 1])
+        gen_hidden = np.reshape(np.asarray(gen_hidden), [num_gen, model.num_hid])
+    else:
+        # using standard sampling
+
+        # initialization for visible units
+        for i in range(model.num_cond):
+            gen_sample.append(np.reshape(visible_data_normalized[gen_init_frame + i], [1, 1]))
+
+        for i in range(num_gen):
+            # initialization for conditional units
+            initcond = np.asarray([gen_sample[s] for s in range(i, i + model.num_cond)])
+
+            # initialization for visible units
+            initframes = gen_sample[i + model.num_cond - 1]
+
+            # run prediction
+            feed = {gen_cond: np.reshape(initcond, [1, model.num_cond]).astype(np.float32),
+                    gen_init: initframes}
+
+            s, h = sess.run(gen_op, feed_dict=feed)
+
+            if model.clip_enable:
+                s[0] = range_one_to_normalized(softclip(range_normalized_to_one(s[0], data_one_mean, data_one_std), model.clip_window), data_one_mean, data_one_std)
+
+            gen_sample.append(s)
+            gen_hidden.append(h)
+
+        gen_sample = np.reshape(np.asarray(gen_sample), [num_gen + model.num_cond, 1])
+        gen_hidden = np.reshape(np.asarray(gen_hidden), [num_gen, model.num_hid])
+
+    gen_sample = range_normalized_to_one(gen_sample, data_one_mean, data_one_std)
+
+    print("Generation successful")
+
+    return gen_sample, gen_hidden
+
+def generate_to_file(num_gen, gen_init_frame = 0):
+    gen_sample, gen_hidden = generate(crbm, gen_init_frame = gen_init_frame, num_gen = num_gen)
+
+    plt.figure(figsize=(12, 6))
+    plt.plot(gen_sample)
+    plt.title('The Generated Timeseries')
+    plt.show()
+
+    # TODO: double check the proper range of values is being sent to file
+
+    # get proper data range
+    data_out = [min(max(s, -1.0), 1.0) for s in gen_sample[0:num_gen]]
+    data_out = np.asarray(data_out)
+
+    # find next available file number
+    i = 0
+    while os.path.exists("out/output%s.wav" % i) or os.path.exists("output%s.txt" % i):
+        i += 1
+
+    # write wav file
+    sp.io.wavfile.write("out/output%s.wav" % i, rate, data_out)
+
+    # write txt file
+    text_out = open("out/output%s.txt" % i, "w")
+    text_out.write('\n'.join("%s: %s" % item for item in sorted(vars(model).items()) if not item[0].startswith('__')))
+    text_out.close()
+
+    print("Successfully created files with index %s" % i)
+
+    plt.figure(figsize=(12, 6))
+    plt.imshow(gen_hidden.T, cmap='gray', interpolation='nearest', aspect='auto')
+    plt.title('Hidden Units Activities')
+    plt.show()
+
+    plt.figure(figsize=(12, 6))
+    plt.plot(data_out)
+    plt.title('The Output Timeseries')
     plt.show()
 
 model.meta = "original"
